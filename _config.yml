@@ -79,6 +79,7 @@ header_pages:
   - tags.html
   - archives.html
   - about.md
+  - search.md
 
 # Page default value
 # defaults:
@@ -140,12 +141,12 @@ paginate: 10
 #   shortname: "Your Disqus username"
 
 # Gitment comments
-gitment:
-  username: "qingchen177"
-  repo: "qingchen177.github.io"
-  client_id: "Ov23li09snksh5hkWm4c"
-  client_secret: "e2d3a610f867cf9eb601c4ed4764de84c5a42dca"
-  redirect_uri: "https://www.liqingchen.com"   # If you use a custom domain name
+#gitment:
+#  username: "qingchen177"
+#  repo: "qingchen177.github.io"
+#  client_id: "Ov23li09snksh5hkWm4c"
+#  client_secret: "e2d3a610f867cf9eb601c4ed4764de84c5a42dca"
+#  redirect_uri: "https://www.liqingchen.com"   # If you use a custom domain name
 
 # Utterances comments
 # See https://utteranc.es/

@@ -14,13 +14,13 @@
 {%- assign night_mode = return -%}
 
 <script>
-  (function() {
+  document.addEventListener('DOMContentLoaded', function() {
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
+    var giscusScript = document.getElementById('giscus-script');
+    var giscusContainer = document.getElementById('giscus_thread');
     var nightModeOption = ('{{ night_mode }}' || 'auto').toLowerCase();
-    var storage = nightModeOption === 'manual'
-        ? localStorage
-        : sessionStorage;
+    var storage = nightModeOption === 'manual' ? localStorage : sessionStorage;
     var themeData = loadThemeData();
 
     function saveThemeData(data) {
@@ -42,17 +42,44 @@
       themeData.nightShift = nightShift;
       saveThemeData(themeData);
       html.dataset.theme = nightShift ? 'dark' : 'light';
+
+      // 设置搜索框背景色
+      var searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.style.backgroundColor = nightShift ? '#333' : '#fff';
+        searchInput.style.color = nightShift ? '#fff' : '#000';
+      }
+
+      giscusScript.setAttribute('data-theme', nightShift ? 'noborder_dark' : 'noborder_light');
+      // Reload the giscus iframe to apply the new theme
+      giscusContainer.innerHTML = '';
+      var newScript = document.createElement('script');
+      newScript.src = giscusScript.src;
+      newScript.setAttribute('data-repo', giscusScript.getAttribute('data-repo'));
+      newScript.setAttribute('data-repo-id', giscusScript.getAttribute('data-repo-id'));
+      newScript.setAttribute('data-category', giscusScript.getAttribute('data-category'));
+      newScript.setAttribute('data-category-id', giscusScript.getAttribute('data-category-id'));
+      newScript.setAttribute('data-mapping', giscusScript.getAttribute('data-mapping'));
+      newScript.setAttribute('data-strict', giscusScript.getAttribute('data-strict'));
+      newScript.setAttribute('data-reactions-enabled', giscusScript.getAttribute('data-reactions-enabled'));
+      newScript.setAttribute('data-emit-metadata', giscusScript.getAttribute('data-emit-metadata'));
+      newScript.setAttribute('data-input-position', giscusScript.getAttribute('data-input-position'));
+      newScript.setAttribute('data-theme', giscusScript.getAttribute('data-theme'));
+      newScript.setAttribute('data-lang', giscusScript.getAttribute('data-lang'));
+      newScript.setAttribute('data-loading', giscusScript.getAttribute('data-loading'));
+      newScript.setAttribute('crossorigin', giscusScript.getAttribute('crossorigin'));
+      newScript.async = true;
+      giscusContainer.appendChild(newScript);
       setTimeout(function() {
         sw.checked = nightShift ? true : false;
       }, 50);
     }
 
     function autoThemeToggle() {
-      // Next time point of theme toggle
       var now = new Date();
       var toggleAt = new Date();
       var hours = now.getHours();
-      var nightShift = hours >= 19 || hours <=7;
+      var nightShift = hours >= 19 || hours <= 7;
 
       if (nightShift) {
         if (hours > 7) {
@@ -69,7 +96,6 @@
 
       var delay = toggleAt.getTime() - now.getTime();
 
-      // auto toggle theme mode
       setTimeout(function() {
         handleThemeToggle(!nightShift);
       }, delay);
@@ -80,7 +106,6 @@
       };
     }
 
-    // Listen the theme toggle event
     sw.addEventListener('change', function(event) {
       handleThemeToggle(event.target.checked);
     });
@@ -88,7 +113,6 @@
     if (nightModeOption == 'auto') {
       var data = autoThemeToggle();
 
-      // Toggle theme by local setting
       if (data.toggleAt > themeData.autoToggleAt) {
         themeData.autoToggleAt = data.toggleAt;
         handleThemeToggle(data.nightShift);
@@ -104,5 +128,5 @@
       }
       handleThemeToggle(nightShift);
     }
-  })();
+  });
 </script>
