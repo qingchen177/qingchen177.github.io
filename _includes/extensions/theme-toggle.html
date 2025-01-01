@@ -9,124 +9,99 @@
   </label>
 </div>
 
-{%- assign name = 'night_mode' -%}
-{%- include functions.html func='get_value' default='auto' -%}
-{%- assign night_mode = return -%}
-
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var sw = document.getElementById('theme-switch');
-    var html = document.getElementsByTagName('html')[0];
-    var giscusScript = document.getElementById('giscus-script');
-    var giscusContainer = document.getElementById('giscus_thread');
-    var nightModeOption = ('{{ night_mode }}' || 'auto').toLowerCase();
-    var storage = nightModeOption === 'manual' ? localStorage : sessionStorage;
-    var themeData = loadThemeData();
+  document.addEventListener('DOMContentLoaded', function () {
+    const sw = document.getElementById('theme-switch');
+    const html = document.documentElement;
+    const nightModeOption = ('{{ night_mode }}' || 'auto').toLowerCase();
+    const storage = nightModeOption === 'manual' ? localStorage : sessionStorage;
+    let themeData = loadThemeData();
+
+    const giscusScript = document.getElementById('giscus-script');
+    const giscusContainer = document.getElementById('giscus_thread');
 
     function saveThemeData(data) {
       storage.setItem('theme', JSON.stringify(data));
     }
 
     function loadThemeData() {
-      var data = storage.getItem('theme');
       try {
-        data = JSON.parse(data ? data : '');
-      } catch(e) {
-        data = { nightShift: undefined, autoToggleAt: 0 };
-        saveThemeData(data);
+        return JSON.parse(storage.getItem('theme')) || { nightShift: undefined, autoToggleAt: 0 };
+      } catch {
+        const defaultData = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(defaultData);
+        return defaultData;
       }
-      return data;
     }
 
     function handleThemeToggle(nightShift) {
       themeData.nightShift = nightShift;
       saveThemeData(themeData);
       html.dataset.theme = nightShift ? 'dark' : 'light';
+      sw.checked = nightShift;
 
-      // 设置搜索框背景色
-      var searchInput = document.getElementById('search-input');
+      const searchInput = document.getElementById('search-input');
       if (searchInput) {
         searchInput.style.backgroundColor = nightShift ? '#333' : '#fff';
         searchInput.style.color = nightShift ? '#fff' : '#000';
       }
 
-      giscusScript.setAttribute('data-theme', nightShift ? 'noborder_dark' : 'noborder_light');
-      // Reload the giscus iframe to apply the new theme
+      updateGiscusTheme(nightShift);
+    }
+
+    function updateGiscusTheme(nightShift) {
+      if (!giscusScript || !giscusContainer) return;
+
+      const theme = nightShift ? 'noborder_dark' : 'noborder_light';
+      giscusScript.setAttribute('data-theme', theme);
       giscusContainer.innerHTML = '';
-      var newScript = document.createElement('script');
-      newScript.src = giscusScript.src;
-      newScript.setAttribute('data-repo', giscusScript.getAttribute('data-repo'));
-      newScript.setAttribute('data-repo-id', giscusScript.getAttribute('data-repo-id'));
-      newScript.setAttribute('data-category', giscusScript.getAttribute('data-category'));
-      newScript.setAttribute('data-category-id', giscusScript.getAttribute('data-category-id'));
-      newScript.setAttribute('data-mapping', giscusScript.getAttribute('data-mapping'));
-      newScript.setAttribute('data-strict', giscusScript.getAttribute('data-strict'));
-      newScript.setAttribute('data-reactions-enabled', giscusScript.getAttribute('data-reactions-enabled'));
-      newScript.setAttribute('data-emit-metadata', giscusScript.getAttribute('data-emit-metadata'));
-      newScript.setAttribute('data-input-position', giscusScript.getAttribute('data-input-position'));
-      newScript.setAttribute('data-theme', giscusScript.getAttribute('data-theme'));
-      newScript.setAttribute('data-lang', giscusScript.getAttribute('data-lang'));
-      newScript.setAttribute('data-loading', giscusScript.getAttribute('data-loading'));
-      newScript.setAttribute('crossorigin', giscusScript.getAttribute('crossorigin'));
+
+      const newScript = document.createElement('script');
+      [...giscusScript.attributes].forEach(attr => {
+        newScript.setAttribute(attr.name, attr.value);
+      });
+      newScript.setAttribute('data-theme', theme);
       newScript.async = true;
       giscusContainer.appendChild(newScript);
-      setTimeout(function() {
-        sw.checked = nightShift ? true : false;
-      }, 50);
+    }
+
+    function calculateNextToggleTime() {
+      const now = new Date();
+      const toggleAt = new Date();
+      const hours = now.getHours();
+      const nightShift = hours >= 19 || hours <= 7;
+
+      toggleAt.setHours(nightShift && hours > 7 ? 7 : 19);
+      toggleAt.setMinutes(0, 0, 0);
+      if (nightShift && hours > 7) toggleAt.setDate(toggleAt.getDate() + 1);
+
+      return { nightShift, delay: toggleAt.getTime() - now.getTime() };
     }
 
     function autoThemeToggle() {
-      var now = new Date();
-      var toggleAt = new Date();
-      var hours = now.getHours();
-      var nightShift = hours >= 19 || hours <= 7;
+      const { nightShift, delay } = calculateNextToggleTime();
 
-      if (nightShift) {
-        if (hours > 7) {
-          toggleAt.setDate(toggleAt.getDate() + 1);
-        }
-        toggleAt.setHours(7);
-      } else {
-        toggleAt.setHours(19);
-      }
+      setTimeout(() => handleThemeToggle(!nightShift), delay);
 
-      toggleAt.setMinutes(0);
-      toggleAt.setSeconds(0);
-      toggleAt.setMilliseconds(0)
-
-      var delay = toggleAt.getTime() - now.getTime();
-
-      setTimeout(function() {
-        handleThemeToggle(!nightShift);
-      }, delay);
-
-      return {
-        nightShift: nightShift,
-        toggleAt: toggleAt.getTime()
-      };
+      return { nightShift, autoToggleAt: Date.now() + delay };
     }
 
-    sw.addEventListener('change', function(event) {
-      handleThemeToggle(event.target.checked);
-    });
+    sw.addEventListener('change', (e) => handleThemeToggle(e.target.checked));
 
-    if (nightModeOption == 'auto') {
-      var data = autoThemeToggle();
-
-      if (data.toggleAt > themeData.autoToggleAt) {
-        themeData.autoToggleAt = data.toggleAt;
-        handleThemeToggle(data.nightShift);
+    if (nightModeOption === 'auto') {
+      const { nightShift, autoToggleAt } = autoThemeToggle();
+      if (autoToggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = autoToggleAt;
+        handleThemeToggle(nightShift);
       } else {
         handleThemeToggle(themeData.nightShift);
       }
-    } else if (nightModeOption == 'manual') {
+    } else if (nightModeOption === 'manual') {
       handleThemeToggle(themeData.nightShift);
     } else {
-      var nightShift = themeData.nightShift;
-      if (nightShift === undefined) {
-        nightShift = nightModeOption === 'on';
-      }
-      handleThemeToggle(nightShift);
+      handleThemeToggle(nightModeOption === 'on');
     }
+
+    sw.checked = themeData.nightShift;
   });
 </script>

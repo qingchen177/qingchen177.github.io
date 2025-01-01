@@ -13,7 +13,7 @@ html {
       height: 0;
       margin-top: 12px;
       background-color: transparent;
-      transition: 0.1s height,background-color,box-shadow;
+      transition: 0.1s height, background-color, box-shadow;
 
       &.site-header {
         .site-brand-inner, .page-link {
@@ -41,6 +41,33 @@ html {
 
       .site-footer-inner {
         border-top: solid 1px #eee;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-column {
+        flex: 1;
+        padding: 0 10px;
+      }
+
+      .footer-column:first-child {
+        text-align: left;
+      }
+
+      .footer-column:last-child {
+        text-align: right;
+      }
+
+      .social-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Adjust the gap as needed */
+      }
+
+      .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -91,6 +118,18 @@ html {
   }
 }
 
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .site-brand {
   line-height: $header-height;
   margin-right: 50px;
@@ -136,6 +175,7 @@ html {
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 24px;
+
       &:hover {
         text-decoration: underline;
       }
@@ -198,6 +238,8 @@ html {
   .site-footer-inner {
     transition: border-top 0.2s;
     padding: $spacing-unit * 1.8 0;
+    display: flex;
+    justify-content: space-between;
   }
 
   a {
@@ -491,7 +533,7 @@ html {
   }
 
   .post-related {
-    &>*:first-child {
+    & > *:first-child {
       @include relative-font-size(1.425);
       color: #333;
       margin-bottom: 14px;
@@ -571,6 +613,7 @@ html {
     &:not(:first-child) {
       margin-top: 18px;
     }
+
     margin-bottom: 8px;
   }
 
@@ -704,7 +747,7 @@ html {
  * Layout and sidebar
  */
 .framework {
-    @extend %flex;
+  @extend %flex;
 
   .main {
     @extend %flex-1;

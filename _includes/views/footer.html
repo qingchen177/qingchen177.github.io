@@ -1,21 +1,49 @@
 <footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <data class="u-url" href="{{ "
+  /" | relative_url }}"></data>
 
   <div class="wrapper">
     <div class="site-footer-inner">
+      <div class="footer-column">
         {%- assign currentYear = 'now' | date: "%Y" -%}
         {%- assign copyright = site.copyright
-            | replace: '{currentYear}', currentYear
-            | replace: '{author}', site.author
-            | replace: '(c)', '&copy;'
-            | replace: '(p)', '℗'
-            | replace: '(cleft)', '<span class="copyleft">&copy;</span>'
+        | replace: '{currentYear}', currentYear
+        | replace: '{author}', site.author
+        | replace: '(c)', '&copy;'
+        | replace: '(p)', '℗'
+        | replace: '(cleft)', '<span class="copyleft">&copy;</span>'
         -%}
-      <div>{{ copyright }}</div>
-      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+        <div>{{ copyright }}</div>
+        <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
-      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
-      <div class="footer-col rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></div>
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.
+        </div>
+        <div class="footer-col rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></div>
+      </div>
+      <div class="footer-column">
+        <div class="social-icons">
+          <div>
+            <a href="https://space.bilibili.com/431104166" target="_blank" title="Bilibili">
+              <img src="/assets/images/icon/bilibili.png" alt="Bilibili">
+            </a>
+          </div>
+          <div>
+            <a href="https://github.com/qingchen177" target="_blank" title="Github">
+              <img src="/assets/images/icon/github.png" alt="Github">
+            </a>
+          </div>
+          <div>
+            <a href="https://x.com/qingchenli0607" target="_blank" title="X">
+              <img src="/assets/images/icon/x.png" alt="X">
+            </a>
+          </div>
+          <div>
+            <a href="mailto:qingchen0607@qq.com" target="_blank" title="Mail">
+              <img src="/assets/images/icon/mail.png" alt="Mail">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

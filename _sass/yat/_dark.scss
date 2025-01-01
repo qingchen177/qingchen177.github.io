@@ -17,6 +17,8 @@ html[data-theme="dark"]  {
       .site-footer-inner {
         border-top: solid 1px #2f2f2f !important;
         transition: 0s;
+        display: flex;
+        justify-content: space-between;
       }
     }
   }
