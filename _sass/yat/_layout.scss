@@ -38,37 +38,6 @@ html {
     footer.site-footer {
       color: unset;
       background-color: transparent;
-
-      .site-footer-inner {
-        border-top: solid 1px #eee;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .footer-column {
-        flex: 1;
-        padding: 0 10px;
-      }
-
-      .footer-column:first-child {
-        text-align: left;
-      }
-
-      .footer-column:last-child {
-        text-align: right;
-      }
-
-      .social-icons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px; /* Adjust the gap as needed */
-      }
-
-      .social-icons a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
     }
   }
 
