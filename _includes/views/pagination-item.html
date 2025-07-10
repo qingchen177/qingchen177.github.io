@@ -3,7 +3,7 @@
 
 {%- assign author = post.author | default: nil -%}
 {%- if author == nil -%}
-  {%- include functions.html func='get_value' name='site.author' default='匿名' -%}
+  {%- include functions.html func='get_value' name='author' default='匿名' -%}
   {%- assign author = return -%}
 {%- endif -%}
 
