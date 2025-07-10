@@ -5,13 +5,13 @@
 {% if include.params.lang %}
   {% assign lang = include.params.lang %}
 {% else %}
-  {% assign lang = lang | default: site.lang | default: "en" %}
+  {% assign lang = lang | default: site.lang | default: "zh-CN" %}
 {% endif %}
 
 {% if include.params.speed %}
   {% assign speed = include.params.speed %}
 {% else %}
-  {% assign speed = 160 %}
+  {% assign speed = 500 %}
 {% endif %}
 
 {%- include functions.html func='get_article_words' -%}
@@ -24,12 +24,12 @@
 {% assign hours = total_mins | divided_by: 60 %}
 {% assign mins = total_mins | modulo: 60 %}
 
-{% assign return = "About" %}
+{% assign return = "约" %}
 
 {% if hours > 0 %}
-  {% assign unit = "hour" %}
+  {% assign unit = "小时" %}
   {% if hours > 1 %}
-    {% assign unit = unit | append: "s" %}
+    {% assign unit = unit %}
   {% endif %}
   {% assign return = return
     | append: " "
@@ -38,9 +38,9 @@
     | append: unit %}
 {% endif %}
 
-{% assign unit = "min" %}
+{% assign unit = "分钟" %}
 {% if mins > 1 %}
-  {% assign unit = unit | append: "s" %}
+  {% assign unit = unit %}
 {% endif %}
 {% assign return = return
   | append: " "

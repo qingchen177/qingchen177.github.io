@@ -1,5 +1,15 @@
 home:
-  heading: "人生自是有情痴，此恨不关风与月"
-  heading2: "愫萌未得少年时，风月只可送此情"
-  subheading: "只是春光如此，却不得见你"
-  banner: ""
+  heading: "只是春光如此"
+  heading2: ""
+  subheading: "却不得见你"
+#  heading: "人生自是有情痴，此恨不关风与月"
+#  heading2: "愫萌未得少年时，风月只可送此情"
+#  subheading: "只是春光如此，却不得见你"
+#  banner: ""
+#  banner: "/assets/images/banners/home.jpg"
+  # 配置页面布局是否启用侧栏
+#  sidebar: ["category-list"]
+#default:
+#  banner: "/assets/images/banners/3.jpg"
+#404:
+#  banner: ""

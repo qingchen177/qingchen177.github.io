@@ -10,7 +10,7 @@
 
 {%- include functions.html func='log' level='debug' msg='Get heading2 value' -%}
 {% assign name = 'heading2' %}
-{%- include functions.html func='get_value' -%}
+{%- include functions.html func='get_value' default='' -%}
 {% assign heading2 = return %}
 
 {%- include functions.html func='log' level='debug' msg='Get subheading value' -%}
@@ -56,14 +56,14 @@
   {%- endif -%}
   {%- if banner_heading_style -%}
   <style>
-    html .page-banner .page-banner-heading {
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
       {{ banner_heading_style }}
     }
   </style>
   {%- endif -%}
   {%- if banner_subheading_style -%}
   <style>
-    html .page-banner .page-banner-subheading {
+    html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
       {{ banner_subheading_style }}
     }
   </style>
@@ -121,10 +121,9 @@
 
           <div class="page-banner-default">
             <h1 class="page-banner-heading">
-              {{ heading | default: page.title | escape }} <br> {{ heading2 | default: page.title | escape }}
+              {{ heading | default: page.title | escape }} <br> {{ heading2 | escape }}
             </h1>
-            <br>
-            <div style="border:1px solid #FFFFFF"></div>
+<!--            <div style="border:1px solid #FFFFFF"></div>-->
             <h2 class="page-banner-subheading">
               {{ subheading | default: page.subtitle | escape }}
             </h2>

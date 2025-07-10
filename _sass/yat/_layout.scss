@@ -38,6 +38,10 @@ html {
     footer.site-footer {
       color: unset;
       background-color: transparent;
+
+      .site-footer-inner {
+        border-top: solid 1px #eee;
+      }
     }
   }
 
@@ -248,6 +252,7 @@ html {
     padding-right: 150px;
 
     .post-tag {
+      color: $brand-color;
       display: inline-block;
       margin: 0 12px 0 0;
     }
@@ -260,8 +265,8 @@ html {
 .page-content {
   @extend %flex-1; /* <-- Keep footer on the bottom */
   -ms-flex: none; /* <-- Fix IE footer issue */
-  padding: $spacing-unit * 2 0;
-  padding-top: 72px;
+  padding: $spacing-unit  0;
+  padding-top: 30px;
 }
 
 .page-heading {
@@ -428,7 +433,7 @@ html {
   @extend %post-header;
 
   .post-header {
-    margin: 50px auto 60px;
+    margin: 40px auto 40px;
     padding: 0 0 20px;
     border-bottom: 1px solid #ebebeb;
 
@@ -438,6 +443,7 @@ html {
 
     .post-subtitle {
       font-weight: 300;
+      color: $grey-color;
     }
 
     .post-meta {
@@ -453,7 +459,7 @@ html {
     word-break: normal;
 
     h2 {
-      @include relative-font-size(2);
+      @include relative-font-size(1.8);
 
       @include media-query($on-laptop) {
         @include relative-font-size(1.75);
@@ -487,10 +493,10 @@ html {
     }
 
     h2, h3, h4, h5, h6 {
-      margin: 60px 0 19px;
+      margin: 40px 0 19px;
     }
 
-    p, hr {
+    p {
       margin-bottom: 24px;
     }
 
@@ -498,11 +504,12 @@ html {
       height: 1px;
       background-color: #ebebeb;
       border: none;
+      margin: 60px 0;
     }
   }
 
   .post-related {
-    & > *:first-child {
+    &>*:first-child {
       @include relative-font-size(1.425);
       color: #333;
       margin-bottom: 14px;
@@ -514,7 +521,7 @@ html {
 
     .post-link {
       @include relative-font-size(1.075);
-      color: $grey-color;
+      color: $brand-color;
 
       &:hover {
         color: darken($grey-color, 50%);
@@ -535,12 +542,20 @@ html {
   justify-content: space-between;
   margin: 72px 0 59px;
   padding: 31px 0 0;
+  gap: 36px;
 
   a {
     @include relative-font-size(1.125);
-    color: $grey-color;
-    line-height: 15px;
-    max-width: 50%;
+    color: $brand-color;
+    max-width: 45%;
+    display: flex;
+    align-items: center;
+
+    * {
+        overflow: hidden;
+        text-wrap-mode: nowrap;
+        text-overflow: ellipsis;
+    }
   }
 
   .previous:before {
@@ -582,7 +597,6 @@ html {
     &:not(:first-child) {
       margin-top: 18px;
     }
-
     margin-bottom: 8px;
   }
 
@@ -697,7 +711,7 @@ html {
         display: inline-block;
         text-decoration: none;
         margin: 9px 12px 0 0;
-        color: #fff;
+        color: $brand-color;
 
         &:hover {
           text-decoration: underline;
@@ -716,7 +730,7 @@ html {
  * Layout and sidebar
  */
 .framework {
-  @extend %flex;
+    @extend %flex;
 
   .main {
     @extend %flex-1;
@@ -773,7 +787,7 @@ html {
       margin-left: 5px;
     }
 
-    color: #303030;
+    color: $brand-color;
 
     &:hover {
       color: #000;

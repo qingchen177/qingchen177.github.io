@@ -1,0 +1,34 @@
+---
+layout: framework
+sidebar: art-list
+---
+
+{% assign art_categories = site.data.art-categories.categories %}
+
+{% assign art_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% for cat in post.categories %}
+    {% if art_categories contains cat %}
+      {% assign art_posts = art_posts | push: post %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% assign keys = "" | split: "" %}
+{% for post in art_posts %}
+  {% for cat in post.categories %}
+    {% if art_categories contains cat %}
+      {% if keys contains cat %}
+        {% continue %}
+      {% else %}
+        {% assign keys = keys | push: cat %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{%- assign keys = keys -%}
+{%- assign field = 'categories' -%}
+{%- assign posts = art_posts -%}
+{%- include views/segments.html keys=keys field=field posts=posts-%}

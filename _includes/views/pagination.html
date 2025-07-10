@@ -1,9 +1,11 @@
+<!--页面分页展示-->
 {%- if page.paginator -%}
   {%- assign paginator = page.paginator -%}
 {%- elsif paginator == nil -%}
   {%- assign paginator = site -%}
 {%- endif -%}
 
+<!--摘录的图片展示样式-->
 {%- assign name = 'excerpt.image_style' -%}
 {%- include functions.html func='get_value' default='z' -%}
 {%- assign image_style = return | append: '-image-style' -%}

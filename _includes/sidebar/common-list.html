@@ -6,18 +6,35 @@
   {%- assign field = include.field -%}
 {%- endif -%}
 
+{%- if include.show_all != nil -%}
+  {%- assign show_all_str = include.show_all | downcase | strip -%}
+  {%- if show_all_str == 'true' or show_all_str == '1' -%}
+    {%- assign show_all = true -%}
+  {%- else -%}
+    {%- assign show_all = false -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign sidebar_items = page.sidebar -%}
+  {%- assign show_all = true -%}
+  {%- if sidebar_items and sidebar_items.size > 1 -%}
+    {%- assign show_all = false -%}
+  {%- endif -%}
+{%- endif -%}
+
 <div class="common-list">
   <ul>
-    <li>
-      <a href="{{ '/index.html' | relative_url }}">
-        全部<span>{{ site.posts.size }}</span>
-      </a>
-    </li>
-
-    {% for key in  keys %}
+    {% if show_all %}
       <li>
-        <a href="{{ url }}#h-{{ key }}">
-          {{ key }} <span>{{ site.posts | where: field, key | size }}</span>
+        <a href="{{ '/index.html' | relative_url }}">
+          全部文章<span>{{ site.posts.size }}</span>
+        </a>
+      </li>
+    {% endif %}
+
+    {% for key in keys %}
+      <li>
+        <a href="{{ url }}#h-{{ key | slugify }}">
+          {{ key }} {%- assign posts_source = include.posts | default: site.posts -%}<span>{{ posts_source | where: field, key | size }}</span>
         </a>
       </li>
     {% endfor %}

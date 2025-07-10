@@ -1,54 +1,38 @@
-title: 清尘's Blog
+# 文章front matter 配置
+# top: 0 # 置顶文档升序排列，必填
+# author: xxx  # 文章作者，非必填，默认使用配置文件中的作者
+# lang: zh-CN # 文章语言，非必填，默认中文 zh-CN
+# excerpt_image # 摘要配图，非必填，NO_EXCERPT_IMAGE代表没有配图
+# categories： [分类1, 分类2] # 文章类别，非必填，建议填写，分类页面会自动生成，默认分隔符为：<|>（类别中不能出现此类字符）
+# banner_html: <html> # 文章配图html，非必填
+# comments: false # 评论功能，非必填，默认开启
+# tags: [标签1, 标签2] # 文章标签，非必填，建议填写，标签页面会自动生成，默认分隔符为：<|>（标签中不能出现此类字符）
+
+# 系统配置
+title: 清尘
 email: qingchen0607@qq.com
 author: 清尘
 copyright: "Copyright (c) {currentYear} <a href=\"https://www.liqingchen.com\">{author}</a>"
 description: >-
-    清尘的个人博客，记录个人的学习记录，附带一些文本摘录，个人想法，其他种种。
+    清尘的小世界，在此你可以了解一部分的清尘。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.liqingchen.com" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "/assets/images/favicon.ico" # the favicon for your site
-yat:
+yat-plus:
   date_format: "%Y-%m-%d"
-debug: true
+#debug: true
 header_transparent: true
-content_width: "1000px"
-google_analytics: 36ab4b9ea8da9e007af3150aa46657cd # 我改成百度了
-enableDNT: "true"
+content_width: "980px"
+# 百度站点分析
+baidu_analytics: "36ab4b9ea8da9e007af3150aa46657cd"
 sitemap: true
 lang: zh-CN
-
-# Translate languges
-# langs refer to https://cloud.google.com/translate/docs/languages
-translate_langs:
-  - lang: zh-CN
-    img: https://cdn.countryflags.com/thumbs/china/flag-400.png
-    text: Chinese(Simple)
-
-  - lang: en
-    img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
-    text: English
-
-  - lang: ru
-    img: https://cdn.countryflags.com/thumbs/russia/flag-400.png
-    text: Russian
-
-  - lang: fr
-    img: https://cdn.countryflags.com/thumbs/france/flag-400.png
-    text: French
-
-  - lang: ja
-    img: https://cdn.countryflags.com/thumbs/japan/flag-400.png
-    text: Japanese
-
-  - lang: ko
-    img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
-    text: Korean
-
-theme_color: snowwhite
-#brand_color: orangered
-#selection:
-#  color: "#ff00ff"
-#  background_color: "yellow"
+#theme_color: snowwhite
+brand_color: orangered
+selection:
+#  color: "#5900ff"
+  color: "#2710c2"
+  background_color: "#aec4ad"
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -75,7 +59,8 @@ night_mode: "auto"
 # this and add the path to the pages in order as they should show up
 header_pages:
   - index.html
-  - categories.html
+  - technology.html
+  - art.html
   - tags.html
   - archives.html
   - about.md
@@ -104,16 +89,16 @@ header_pages:
 #   heading_style: null     # Custom heading style (e.g. "font-weight: bold; text-decoration: underline")
 #   subheading_style: null  # Custom subheading style (e.g. color: gold)
 
-# Excerpt settings
-# excerpt:
-#   default_image: /assets/images/default-image.jpeg  # Default image when the image style is not none
-#   image_style: z          # Image layout style (It's value could be none, left, right, top, z, z-reverse)
-#   image_width: 38.2%      # Image default width
-#   image_height: 160px     # Image default height
-#   text_size: 350          # Words default size
+# 文章摘要缩略图设置
+excerpt:
+#  default_image: /assets/images/default-image.jpeg  # Default image when the image style is not none
+  image_style: right       # Image layout style (It's value could be none, left, right, top, z, z-reverse)
+  image_width: 36.2%      # Image default width
+  image_height: 160px     # Image default height
+  text_size: 300         # 摘录默认字数
 
 # Pagination setting
-paginate: 10
+paginate: 5
 
 # Photo previewer settings (PhotoSwipe 5)
 # the options please refer to: https://photoswipe.com/options/
@@ -158,6 +143,10 @@ paginate: 10
 #   label: "utterances comment"
 #   theme: "github-light"
 #   follow_site_theme: true
+
+# 404页面添加下面代码实现随机banner图片
+#{% assign seed = "404-" | append: site.time | date: "%s" %}
+#{% include extensions/geopattern.html selector=".page-banner-img" seed=seed %}
 
 # Build settings
 # highlighter: none

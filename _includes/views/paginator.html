@@ -1,3 +1,4 @@
+<!--用来展示上一页和下一页的跳转-->
 {% if include.paginator %}
   {% assign paginator = include.paginator %}
 {% endif %}
@@ -6,9 +7,9 @@
   <div class="paginator">
     <span class="previous">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | relative_url }}">Prev</a>
+      <a href="{{ paginator.previous_page_path | relative_url }}">上一页</a>
     {% else %}
-      <span>Prev</span>
+      <span>上一页</span>
     {% endif %}
     </span>
 
@@ -16,9 +17,9 @@
 
     <span class="next">
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+      <a href="{{ paginator.next_page_path | relative_url }}">下一页</a>
     {% else %}
-      <span>Next</span>
+      <span>下一页</span>
     {% endif %}
     </span>
   </div>

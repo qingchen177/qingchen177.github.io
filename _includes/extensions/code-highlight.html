@@ -1,9 +1,5 @@
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
-<script charset="UTF-8"
-        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"
-        async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
 {%- assign name = 'code_badge.enabled' -%}
 {%- include functions.html func='get_value' default='true' -%}
@@ -14,7 +10,7 @@
 {%- assign badge_color = return -%}
 
 {%- assign name = 'code_badge.background_color' -%}
-{%- include functions.html func='get_value' default='#ff4e00' -%}
+{%- include functions.html func='get_value' default='#454545' -%}
 {%- assign badge_background_color = return -%}
 
 {%- assign name = 'code_badge.text_transform' -%}
@@ -58,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   function handle(block) {
     addLangData(block);
     addBadge(block)
-    hljs.highlightBlock(block);
+    hljs.highlightAll();
   }
 
   for (var i = 0; i < els.length; i++) {
@@ -69,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
 </script>
 
 <style>
+  pre.badge {
+    position: relative;
+  }
   /* code language badge */
   pre.badge::before {
     content: attr(data-lang);

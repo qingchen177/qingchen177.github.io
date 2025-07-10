@@ -1,8 +1,11 @@
 ---
-layout: default
+layout: framework
 title: 搜索
+#sidebar: 
+#  - category-list
+#  - tag-list
 ---
-## Whataya want from me ❤️‍🩹
+## Whataya want from me ❤️‍
 
 <!-- Html Elements for Search -->
 <div id="search-container" class="search-container" style="margin: 20px 0;">

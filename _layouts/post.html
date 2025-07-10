@@ -4,7 +4,7 @@ banner:
 banner_html: post-header.html
 hidden: []
 sidebar:
-  - article-menu
+- article-menu
 ---
 
 <div class="post">
@@ -29,14 +29,21 @@ sidebar:
     {%- if result.size == 0 -%}
     <div class="post-nav">
       {%- if page.previous -%}
-        <a class="previous" href="{{ page.previous.url | relative_url }}" title="{{
-          page.previous.title | escape }}">{{ page.previous.title | escape | truncatewords: 6 }}</a>
+      <a class="previous"
+         href="{{ page.previous.url | relative_url }}"
+         title="{{ page.previous.title | escape }}">
+        <div>{{ page.previous.title | escape | truncatewords: 15 }}</div>
+      </a>
       {%- else -%}
       <span></span>
       {%- endif -%}
 
       {%- if page.next -%}
-        <a class="next" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | escape }}">{{ page.next.title | escape | truncatewords: 6 }}</a>
+      <a class="next"
+         href="{{ page.next.url | relative_url }}"
+         title="{{ page.next.title | escape }}">
+        <div>{{ page.next.title | escape | truncatewords: 15 }}</div>
+      </a>
       {%- else -%}
       <span></span>
       {%- endif -%}
@@ -46,23 +53,35 @@ sidebar:
     {%- assign result = hidden | where_exp: "item", "item == 'related_posts'" -%}
     {%- if result.size == 0 -%}
     <div class="post-related">
-      <div>Related Articles</div>
+      <div>随便看看</div>
       <ul>
-        {% assign posts = site[page.collection] | sample:4 %}
+        {% assign all_posts = site[page.collection] %}
+        {% assign filtered_posts = "" | split: "," %}
+
+        {%- for post in all_posts -%}
+        {%- if post.url != page.url -%}
+        {% assign filtered_posts = filtered_posts | push: post %}
+        {%- endif -%}
+        {%- endfor -%}
+        {%- if filtered_posts.size > 0 -%}
+        {% assign posts = filtered_posts | sample:3 %}
         {%- for post in posts -%}
-          {%- assign post_item_class = "" -%}
-          {%- if post.top -%}
-            {%- assign post_item_class = "top-post" -%}
-          {%- endif -%}
+        {%- assign post_item_class = "" -%}
+        {%- if post.top -%}
+        {%- assign post_item_class = "top-post" -%}
+        {%- endif -%}
         <li class="{{ post_item_class }}">
           <a class="post-link"
-            href="{{ post.url | relative_url }}"
-            title="{{ post.title | escape }}">
+             href="{{ post.url | relative_url }}"
+             title="{{ post.title | escape }}">
             {{ post.title | escape | truncatewords: 12 }}
             {%- include views/post-badges.html -%}
           </a>
         </li>
         {%- endfor -%}
+        {%- else -%}
+        <li>没得看啦</li>
+        {%- endif -%}
       </ul>
     </div>
     {%- endif -%}
@@ -71,21 +90,7 @@ sidebar:
     {%- if result.size == 0 -%}
     <div class="post-comments">
       {%- if page.comments != false -%}
-
-      {%- if site.disqus.shortname -%}
-      {%- include extensions/comments/disqus.html -%}
-      {%- endif -%}
-
-      {%- if site.gitment.username -%}
-      {%- include extensions/comments/gitment.html -%}
-      {%- endif -%}
-
       {%- include extensions/comments/giscus.html -%}
-
-      {%- if site.utterances.repo -%}
-      {%- include extensions/comments/utterances.html -%}
-      {%- endif -%}
-
       {%- endif -%}
     </div>
     {%- endif -%}

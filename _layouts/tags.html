@@ -5,7 +5,7 @@ sidebar: tag-list
 
 {%- if site.posts.size > 0 -%}
 
-  {%- include functions.html func='log' level='debug' msg='Get tags value' -%}
+  {%- include functions.html func='log' level='debug' msg='Get value' -%}
   {%- include functions.html func='get_tags' -%}
   {% assign tags = return %}
 

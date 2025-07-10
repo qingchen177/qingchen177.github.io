@@ -4,6 +4,34 @@
   padding: 0;
   margin: 0;
 }
+
+/* 新增部分 */
+.post-menu-content {
+  max-height: 80vh; /* 最大为视口高度的 80% */
+  overflow-y: auto; /* 纵向滚动 */
+}
+/* 隐藏滚动条，但保持滚动功能 */
+.post-menu-content {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;     /* Firefox */
+  overflow-y: auto;          /* 必须保留 */
+  max-height: 80vh;
+}
+
+/* WebKit browsers（Chrome, Safari, Edge 等） */
+.post-menu-content::-webkit-scrollbar {
+  display: none; /* 隐藏滚动条 */
+}
+
+.post-menu-content {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .post-menu {
+    display: none;
+  }
+}
 </style>
 
 <div class="post-menu">
@@ -14,7 +42,7 @@
 <script>
   function generateContent() {
     var menu = document.querySelector(".post-menu");
-    var menuContent =  menu.querySelector(".post-menu-content");
+    var menuContent = menu.querySelector(".post-menu-content");
     var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
 
     // Hide menu when no headings
@@ -53,11 +81,11 @@
       var beginIndex = index;
       var endIndex = index + 1;
       while (beginIndex >= 0
-        && !items[beginIndex].classList.contains('h-h2')) {
+      && !items[beginIndex].classList.contains('h-h2')) {
         beginIndex -= 1;
       }
       while (endIndex < items.length
-        && !items[endIndex].classList.contains('h-h2')) {
+      && !items[endIndex].classList.contains('h-h2')) {
         endIndex += 1;
       }
       for (var i = 0; i < beginIndex; i++) {
@@ -69,7 +97,7 @@
       for (var i = beginIndex + 1; i < endIndex; i++) {
         item = items[i]
         // if (!item.classList.contains('h-h2')) {
-          item.style.display = '';
+        item.style.display = '';
         // }
       }
       for (var i = endIndex; i < items.length; i++) {
@@ -97,7 +125,7 @@
         var headerHeight = headerTop + headerHeight + 20;
         if (headingRect.top <= headerHeight) {
           var id = 'h-' + h.getAttribute('id');
-          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var a = menuContent.querySelector('a[href="#' + id + '"]');
           var curActive = a.parentNode;
           if (curActive) {
             curActive.classList.add('active');

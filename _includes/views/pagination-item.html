@@ -1,4 +1,11 @@
-{%- assign date_format = site.yat.date_format | default: "%b %-d, %Y" -%}
+<!--文章摘要的设置包含阅读时长时间等等-->
+{%- assign date_format = site.yat-plus.date_format | default: "%Y-%m-%d" -%}
+
+{%- assign author = post.author | default: nil -%}
+{%- if author == nil -%}
+  {%- include functions.html func='get_value' name='site.author' default='匿名' -%}
+  {%- assign author = return -%}
+{%- endif -%}
 
 {%- assign article = post.content -%}
 {%- assign lang = post.lang -%}
@@ -25,7 +32,7 @@
   | default: post.banner.image
   | default: post.banner
   | default: default_image
-  | default: '/assets/images/default-image.jpeg' -%}
+  | default: 'NO_EXCERPT_IMAGE' -%}
 
 <li class="post-item {{ post_item_class }}">
   <h2 class="post-title">
@@ -36,8 +43,9 @@
   </h2>
   <div class="post-meta">
     <span class="post-date"><i class="fa fa-calendar"></i> {{ post.date | date: date_format }}</span>
-    {%- if post.author -%}
-    <span class="post-author left-vsplit"><i class="fa fa-pencil"></i> {{ post.author | escape }}</span>
+    <!-- 用函数模块统一处理：如果没有 author，使用默认值 -->
+    {%- if author -%}
+    <span class="post-author left-vsplit"><i class="fa fa-pencil"></i> {{ author | escape }}</span>
     {%- endif -%}
     <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> {{ reading_time }}</span>
   </div>
@@ -48,7 +56,7 @@
     </a>
     {%- endif -%}
     <a class="post-text" href="{{ post_url }}">
-      <p>{{ article_excerpt }} <span class="read_more">Read More</span></p>
+      <p>{{ article_excerpt }} <span class="read_more">...</span></p>
     </a>
   </div>
   <div class="post-tags">

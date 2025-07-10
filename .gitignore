@@ -2,5 +2,8 @@
 .bundle
 .sass-cache
 _site
-Gemfile.lock
+.jekyll-cache
+.jekyll-metadata
+vendor
 .idea
+Gemfile.lock

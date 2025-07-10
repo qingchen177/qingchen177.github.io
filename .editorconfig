@@ -1,14 +1,15 @@
-# editorconfig.org
-
+# 表示这是配置文件的根目录（防止向上查找其他 .editorconfig 文件）
 root = true
 
+# 对所有文件生效
 [*]
-charset = utf-8
-end_of_line = lf
-indent_size = 2
-indent_style = space
-insert_final_newline = true
-trim_trailing_whitespace = true
+charset = utf-8                    # 文件编码为 UTF-8
+end_of_line = lf                   # 使用 LF 作为换行符（Unix 风格）
+indent_size = 2                    # 缩进大小为 2 个空格
+indent_style = space               # 使用空格而非 tab 缩进
+insert_final_newline = true        # 文件末尾强制添加换行符
+trim_trailing_whitespace = true    # 自动移除每行末尾的空白字符（空格或 tab）
 
+# 对所有 Markdown 文件（*.md）单独设置
 [*.md]
-trim_trailing_whitespace = false
+trim_trailing_whitespace = false   # 不移除行尾空格（有助于在 Markdown 中保留格式）

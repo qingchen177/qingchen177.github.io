@@ -1,18 +1,20 @@
 {% if include.selector %}
-  {% assign selector = include.selector %}
+{% assign selector = include.selector %}
 {% endif %}
 
 {% if include.seed %}
-  {% assign seed = include.seed %}
+{% assign seed = include.seed %}
 {% endif %}
-
+<!--生成随机图片-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
 <script>
   function setRandomBgImage(selector, seed) {
-    var pattern = GeoPattern.generate(seed);
+    var pattern = GeoPattern.generate('{{ seed }}');
     var element = document.querySelector(selector)
+    console.log("Element found:", !!element);
     if (element) {
       element.style.backgroundImage = pattern.toDataUrl();
+      console.log("Generated pattern data URL:", pattern.toDataUrl());
     }
   }
 

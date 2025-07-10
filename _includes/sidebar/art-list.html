@@ -1,0 +1,31 @@
+{% assign art_categories = "音乐,摘录" | split: "," %}
+
+{% assign art_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% for cat in post.categories %}
+    {% if art_categories contains cat %}
+      {% assign art_posts = art_posts | push: post %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% assign keys = "" | split: "" %}
+{% for post in art_posts %}
+  {% for cat in post.categories %}
+    {% if art_categories contains cat %}
+      {% if keys contains cat %}
+        {% continue %}
+      {% else %}
+        {% assign keys = keys | push: cat %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+{% assign keys = keys %}
+{% assign field = 'categories' %}
+{% assign url = '/art.html' | relative_url %}
+{% assign posts = art_posts %}
+{%- include sidebar/common-list.html show_all = '0' -%}

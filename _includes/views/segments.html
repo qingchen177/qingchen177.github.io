@@ -6,11 +6,17 @@
   {%- assign field = include.field -%}
 {%- endif -%}
 
+{%- if include.posts -%}
+  {%- assign site_posts = include.posts -%}
+{%- else -%}
+  {%- assign site_posts = site.posts -%}
+{%- endif -%}
+
 <div class="page-segments">
   <ul class="page-segments-list">
     {% for key in keys %}
-    <h2 id="{{ key }}" class="segment-name">{{ key }}</h2>
-      {% assign items = site.posts | where: field, key %}
+      <h2 id="h-{{ key | slugify }}" class="segment-name">{{ key }}</h2>
+      {% assign items = site_posts | where: field, key %}
       {% for item in items %}
         {% if item != nil %}
           {%- assign post_item_class = "" -%}
