@@ -57,8 +57,6 @@ html {
 }
 
 
-
-
 /**
  * Site header
  */
@@ -268,7 +266,7 @@ html {
 .page-content {
   @extend %flex-1; /* <-- Keep footer on the bottom */
   -ms-flex: none; /* <-- Fix IE footer issue */
-  padding: $spacing-unit  0;
+  padding: $spacing-unit 0;
   padding-top: 30px;
 }
 
@@ -481,10 +479,26 @@ html {
     }
 
     h4 {
+      @include relative-font-size(1.45);
+
+      @include media-query($on-laptop) {
+        @include relative-font-size(1.2);
+      }
+    }
+
+    h5 {
       @include relative-font-size(1.25);
 
       @include media-query($on-laptop) {
         @include relative-font-size(1.125);
+      }
+    }
+
+    h6 {
+      @include relative-font-size(1.125);
+
+      @include media-query($on-laptop) {
+        @include relative-font-size(1.075);
       }
     }
 
@@ -499,7 +513,7 @@ html {
     }
 
     h2, h3, h4, h5, h6 {
-      margin: 40px 0 19px;
+      margin: 24px 0 19px;
     }
 
     p {
@@ -510,12 +524,12 @@ html {
       height: 1px;
       background-color: #ebebeb;
       border: none;
-      margin: 60px 0;
+      margin: 34px 0;
     }
   }
 
   .post-related {
-    &>*:first-child {
+    & > *:first-child {
       @include relative-font-size(1.425);
       color: #333;
       margin-bottom: 14px;
@@ -558,9 +572,9 @@ html {
     align-items: center;
 
     * {
-        overflow: hidden;
-        text-wrap-mode: nowrap;
-        text-overflow: ellipsis;
+      overflow: hidden;
+      text-wrap-mode: nowrap;
+      text-overflow: ellipsis;
     }
   }
 
@@ -603,6 +617,7 @@ html {
     &:not(:first-child) {
       margin-top: 18px;
     }
+
     margin-bottom: 8px;
   }
 
@@ -736,7 +751,7 @@ html {
  * Layout and sidebar
  */
 .framework {
-    @extend %flex;
+  @extend %flex;
 
   .main {
     @extend %flex-1;

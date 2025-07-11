@@ -126,12 +126,23 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
-  padding-left: divide($spacing-unit, 2);
-  @include relative-font-size(1.125);
-  letter-spacing: -1px;
-  font-style: italic;
+  //padding-left: divide($spacing-unit, 2);
+  padding: 1.6rem;
+  //letter-spacing: -1px;
+  //font-style: italic;
+  font-family: "PingFang SC", Helvetica, "Helvetica Neue", "Microsoft YaHei", Arial, sans-serif;
+  margin: 1.6rem 0;
+  @include relative-font-size(1.0);
+  //font-size: 16px;
+  box-sizing: border-box;
+  -webkit-border-radius: .8rem;
+  -moz-border-radius: .8rem;
+  border-left: .2rem solid #3e69d7;
+  border-bottom: 0;
+  border-top: 0;
+  border-right: 0;
+  background: rgba(62, 105, 215, 0.06);
+  overflow: hidden;
 
   > :last-child {
     margin-bottom: 0;
