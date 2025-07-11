@@ -217,9 +217,9 @@ pre {
   z-index: 10;
   font-size: 12px;
   padding: 4px 8px;
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ccc;
+  background-color: #1a2331;
+  color: #ffffff;
+  border: 1px solid #818181;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -228,7 +228,7 @@ pre {
 }
 
 .copy-btn:hover {
-  background-color: #eee;
+  background-color: rgba(33, 44, 72, 0.15);
 }
 
 

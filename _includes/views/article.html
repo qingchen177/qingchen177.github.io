@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const copyBtn = document.createElement('button');
       copyBtn.className = 'copy-btn';
       copyBtn.type = 'button';
-      copyBtn.textContent = '📋';
+      copyBtn.textContent = 'copy';
 
       pre.appendChild(copyBtn);
 
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(() => {
               copyBtn.textContent = '✅';
               setTimeout(() => {
-                copyBtn.textContent = '📋';
+                copyBtn.textContent = 'copy';
               }, 2000);
             })
             .catch(err => {
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (successful) {
           button.textContent = '✅';
           setTimeout(() => {
-            button.textContent = '📋';
+            button.textContent = 'copy';
           }, 2000);
         } else {
           alert('复制失败，请手动选择内容后按 Ctrl+C');
