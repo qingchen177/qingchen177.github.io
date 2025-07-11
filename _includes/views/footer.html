@@ -1,3 +1,4 @@
+
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
@@ -12,12 +13,16 @@
         | replace: '(p)', '℗'
         | replace: '(cleft)', '<span class="copyleft">&copy;</span>'
         -%}
+        <div><span id="busuanzi_container_site_pv" >Visits <span id="busuanzi_value_site_pv"></span> <i class="fa fa-eye"></i></span></div>
         <div>{{ copyright }}</div>
         <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
       generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
       another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.
         </div>
-        <div class="footer-col rss-subscribe"><a href="{{ "/feed.xml" | relative_url }}">RSS订阅</a></div>
+        <div class="footer-col rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">RSS</a></div>
+        <div>
+
+        </div>
       </div>
       <div class="footer-column">
         <div class="social-icons">
