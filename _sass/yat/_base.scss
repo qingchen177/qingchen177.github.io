@@ -147,6 +147,11 @@ blockquote {
   > :last-child {
     margin-bottom: 0;
   }
+
+  // 设置 blockquote 内部 p 标签的样式
+  p {
+    margin-bottom: 4px !important;
+  }
 }
 
 
