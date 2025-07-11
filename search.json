@@ -10,21 +10,24 @@ layout: none
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
       "date"     : "{{ post.date }}",
-      "content"  : "{{ post.content | strip_html | strip_newlines | escape }}"
-    } {% unless forloop.last %},{% endunless %}
+      "content"  : {{ post.content | strip_html | strip_newlines | jsonify }}
+    }{% unless forloop.last and site.pages == empty %},{% endunless %}
   {% endfor %}
-  ,
+
+  {% assign first = true %}
   {% for page in site.pages %}
-   {
-     {% if page.title != nil %}
+    {% if page.title %}
+      {% unless first %},{% endunless %}
+      {% assign first = false %}
+      {
         "title"    : "{{ page.title | escape }}",
         "subtitle" : "{{ page.subtitle | escape }}",
         "category" : "{{ page.category }}",
         "tags"     : "{{ page.tags | join: ', ' }}",
         "url"      : "{{ site.baseurl }}{{ page.url }}",
         "date"     : "{{ page.date }}",
-        "content"  : "{{ page.content | strip_html | strip_newlines | escape }}"
-     {% endif %}
-   } {% unless forloop.last %},{% endunless %}
+        "content"  : {{ page.content | strip_html | strip_newlines | jsonify }}
+      }
+    {% endif %}
   {% endfor %}
 ]
