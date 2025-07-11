@@ -7,3 +7,42 @@
     </div>
 
 </article>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".post-content");
+  if (!container) return;
+
+  // 正则识别 URL（支持 https 和 www. 开头）
+  const urlRegex = /(?:https?:\/\/|www\.)[^\s<>"'`，。！？；：、【】「」『』（）()《》]*[^\s<>"'`，。！？；：、【】「」『』（）()《》.]/g;
+
+  // 遍历 container 中的所有文本节点（不包括 a 标签内）
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+    acceptNode: (node) => {
+      // 排除已经在 <a> 标签内的文本节点
+      return node.parentNode.nodeName === "A" ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    }
+  });
+
+  const textNodes = [];
+  while (walker.nextNode()) {
+    textNodes.push(walker.currentNode);
+  }
+
+  for (const node of textNodes) {
+    const text = node.nodeValue;
+    const replaced = text.replace(urlRegex, function (rawUrl) {
+      const href = rawUrl.startsWith('www.') ? 'https://' + rawUrl : rawUrl;
+      return `<a href="${href}" target="_blank" rel="noopener">${rawUrl}</a>`;
+    });
+
+    // 如果有替换内容，替换为 HTML 节点
+    if (replaced !== text) {
+      const span = document.createElement("span");
+      span.innerHTML = replaced;
+      node.parentNode.replaceChild(span, node);
+    }
+  }
+});
+</script>
+
