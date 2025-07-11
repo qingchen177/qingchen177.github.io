@@ -152,7 +152,9 @@ code {
 *:not(pre) > code {
   padding: 3px 6px;
   border-radius: 3px;
-  background-color: #eee;
+  //background-color: #eee;
+  color: #2f479f;
+  background: rgba(62, 105, 215, 0.15);
   margin: 0 5px;
 }
 
@@ -160,6 +162,20 @@ pre {
   overflow-x: auto;
   position: relative;
   background-color: #f0f0f0;
+
+  // 自定义滚动条
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
   > code {
     display: inline-block;
@@ -176,6 +192,27 @@ pre {
       border: none;
     }
   }
+}
+
+.copy-btn {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  z-index: 10;
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 增加立体感 */
+}
+
+.copy-btn:hover {
+  background-color: #eee;
 }
 
 
@@ -235,6 +272,21 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+/*kbd*/
+kbd {
+  display: inline-block;
+  padding: 4px 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: #333;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 -1px 0 #ccc;
+  margin: 2px;
+}
+
 
 /**
  * Flex layout

@@ -1,7 +1,7 @@
 $dark-background-color: #0e0e0e !default;
 $dark-text-color: #b0b0b0 !default;
 
-html[data-theme="dark"]  {
+html[data-theme="dark"] {
   &[data-scroll-status='top'] {
     header.site-header-transparent {
       &.site-header {
@@ -29,8 +29,10 @@ html[data-theme="dark"]  {
   }
 
   *:not(pre) > code {
-    color: $dark-text-color;
-    background-color: #454545;
+    //color: $dark-text-color;
+    //background-color: #454545;
+    color: #bbc7fd;
+    background: rgba(62, 105, 215, 0.3);
   }
 
   blockquote {
@@ -76,7 +78,7 @@ html[data-theme="dark"]  {
 
     @include media-query($on-laptop) {
       .menu-icon > svg {
-          fill: rgba($dark-text-color, 80%);
+        fill: rgba($dark-text-color, 80%);
       }
 
       .site-nav input:checked ~ .trigger {
@@ -206,6 +208,13 @@ html[data-theme="dark"]  {
   a:visited .post-badges .post-badge.badge-new {
     display: none;
     background-color: $dark-background-color;
+  }
+
+  kbd {
+    color: #eee;
+    background-color: #2d2d2d;
+    border-color: #555;
+    box-shadow: inset 0 -1px 0 #555;
   }
 }
 

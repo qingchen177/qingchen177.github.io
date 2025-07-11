@@ -46,3 +46,69 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('pre').forEach(pre => {
+      const code = pre.querySelector('code');
+
+      if (!code) {
+        console.warn('发现没有 <code> 的 <pre> 元素，已跳过添加复制按钮');
+        return;
+      }
+
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'copy-btn';
+      copyBtn.type = 'button';
+      copyBtn.textContent = '📋';
+
+      pre.appendChild(copyBtn);
+
+      copyBtn.addEventListener('click', () => {
+        const text = code.innerText;
+
+        // 尝试使用 Clipboard API（现代浏览器）
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text)
+            .then(() => {
+              copyBtn.textContent = '✅';
+              setTimeout(() => {
+                copyBtn.textContent = '📋';
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('Clipboard API 失败:', err);
+              fallbackCopyText(text, copyBtn);
+            });
+        } else {
+          // 回退到 execCommand
+          fallbackCopyText(text, copyBtn);
+        }
+      });
+    });
+
+    // 兼容方法：使用 textarea + execCommand
+    function fallbackCopyText(text, button) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          button.textContent = '✅';
+          setTimeout(() => {
+            button.textContent = '📋';
+          }, 2000);
+        } else {
+          alert('复制失败，请手动选择内容后按 Ctrl+C');
+        }
+      } catch (err) {
+        alert('复制失败，请手动选择内容后按 Ctrl+C');
+        console.error('execCommand 失败:', err);
+      }
+      document.body.removeChild(textarea);
+    }
+  });
+</script>
