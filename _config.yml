@@ -12,11 +12,11 @@
 title: 清尘
 email: qingchen0607@qq.com
 author: 清尘
-copyright: "Copyright (c) {currentYear} <a href=\"https://www.liqingchen.com\">{author}</a>"
+copyright: "Copyright (c) {currentYear} <a href=\"https://blog.liqingchen.com\">{author}</a>"
 description: >-
     清尘的小世界，在此你可以了解一部分的清尘。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.blog.liqingchen.com" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://blog.liqingchen.com" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "/assets/images/favicon.ico" # the favicon for your site
 yat-plus:
   date_format: "%Y-%m-%d"

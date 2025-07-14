@@ -9,7 +9,6 @@ dl, dd, ol, ul, figure {
 }
 
 
-
 /**
  * Basic styling
  */
@@ -23,16 +22,15 @@ body {
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   transition-duration: $base-transition-duration;
 }
-
 
 
 /**
@@ -46,14 +44,12 @@ ul, ol, dl, figure,
 }
 
 
-
 /**
  * `main` element
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-
 
 
 /**
@@ -63,7 +59,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
 
 
 /**
@@ -76,7 +71,6 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
-
 
 
 /**
@@ -92,7 +86,6 @@ li {
     margin-bottom: 0;
   }
 }
-
 
 
 /**
@@ -155,7 +148,6 @@ blockquote {
 }
 
 
-
 /**
  * Code formatting
  */
@@ -177,25 +169,11 @@ code {
 pre {
   overflow-x: auto;
   position: relative;
-  background-color: #f0f0f0;
-
-  // 自定义滚动条
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
+  //background-color: #f0f0f0;
 
   > code {
     display: inline-block;
-    padding: 20px!important;
+    padding: 20px !important;
     background-color: transparent;
     border: 0;
   }
@@ -210,9 +188,24 @@ pre {
   }
 }
 
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
 .copy-btn {
   position: absolute;
-  bottom: 6px;
+  top: 6px;
   right: 6px;
   z-index: 10;
   font-size: 12px;
@@ -224,13 +217,12 @@ pre {
   cursor: pointer;
   transition: background-color 0.2s ease;
   user-select: none;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 增加立体感 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 增加立体感 */
 }
 
 .copy-btn:hover {
   background-color: rgba(33, 44, 72, 0.15);
 }
-
 
 
 /**
@@ -243,7 +235,6 @@ pre {
   padding-left: $spacing-unit;
   @extend %clearfix;
 }
-
 
 
 /**
@@ -366,18 +357,22 @@ kbd {
   color: $selection-color;
   background-color: $selection-background-color;
 }
+
 ::-moz-selection { /* Code for Firefox */
   color: $selection-color;
   background-color: $selection-background-color;
 }
+
 ::-ms-selection {
   color: $selection-color;
   background-color: $selection-background-color;
 }
+
 ::-o-selection {
   color: $selection-color;
   background-color: $selection-background-color;
 }
+
 ::-webkit-selection {
   color: $selection-color;
   background-color: $selection-background-color;
