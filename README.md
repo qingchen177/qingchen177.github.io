@@ -1,3 +1,3 @@
 # Qingchen's Blog
 
-https://www.liqingchen.com
+https://www.blog.liqingchen.com
