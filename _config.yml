@@ -16,7 +16,7 @@ copyright: "Copyright (c) {currentYear} <a href=\"https://www.liqingchen.com\">{
 description: >-
     清尘的小世界，在此你可以了解一部分的清尘。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.liqingchen.com" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://www.blog.liqingchen.com" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "/assets/images/favicon.ico" # the favicon for your site
 yat-plus:
   date_format: "%Y-%m-%d"
