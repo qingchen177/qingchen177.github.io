@@ -60,7 +60,8 @@ night_mode: "auto"
 header_pages:
   - index.html
   - technology.html
-  - art.html
+  - daily.html
+  - love-letter.html
   - tags.html
   - archives.html
   - about.md
@@ -153,6 +154,15 @@ paginate: 5
 markdown: kramdown
 kramdown:
   input: GFM
+
+feed:
+#  categories:
+#    - 情书
+  tags: true
+  icon: /assets/images/favicon.ico
+  logo: /assets/images/favicon.png
+  posts_limit: 20
+
 
 plugins:
   - jekyll-feed

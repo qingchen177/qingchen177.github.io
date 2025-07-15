@@ -1,0 +1,30 @@
+---
+layout: framework
+sidebar: love-letter-list
+---
+
+{% assign love-letter_categories = site.data.love-letter-categories.categories %}
+
+{% assign love-letter_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% for cat in post.categories %}
+    {% if love-letter_categories contains cat %}
+      {% assign love-letter_posts = love-letter_posts | push: post %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{%- if love-letter_posts.size > 0 -%}
+  {% include functions.html func='log' level='debug' msg='Get datetimes value' %}
+
+  {% assign filter = '%Y' %}
+  {% assign posts = love-letter_posts %}
+  {% include functions.html func='get_datetimes' posts=posts %}
+  {% assign datetimes = return %}
+
+  {%- assign keys = datetimes -%}
+  {%- assign field = 'date' -%}
+  {%- assign posts = love-letter_posts -%}
+  {%- include views/segments.html keys=keys field=field posts=posts-%}
+{%- endif -%}

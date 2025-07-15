@@ -1,5 +1,8 @@
 {% assign split_mark = '<|>' %}
-{% assign excluded = site.data.art-categories.categories %}
+{% assign excluded_daily = site.data.daily-categories.categories %}
+{% assign excluded_love = site.data.love-letter-categories.categories %}
+{% assign excluded = excluded_daily | concat: excluded_love %}
+
 
 {% assign categories = '' %}
 {% for category in site.categories %}

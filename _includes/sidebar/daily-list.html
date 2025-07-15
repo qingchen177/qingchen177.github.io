@@ -1,19 +1,19 @@
-{% assign art_categories = "音乐,摘录" | split: "," %}
+{% assign daily_categories = site.data.daily-categories.categories %}
 
-{% assign art_posts = "" | split: "" %}
+{% assign daily_posts = "" | split: "" %}
 {% for post in site.posts %}
   {% for cat in post.categories %}
-    {% if art_categories contains cat %}
-      {% assign art_posts = art_posts | push: post %}
+    {% if daily_categories contains cat %}
+      {% assign daily_posts = daily_posts | push: post %}
       {% break %}
     {% endif %}
   {% endfor %}
 {% endfor %}
 
 {% assign keys = "" | split: "" %}
-{% for post in art_posts %}
+{% for post in daily_posts %}
   {% for cat in post.categories %}
-    {% if art_categories contains cat %}
+    {% if daily_categories contains cat %}
       {% if keys contains cat %}
         {% continue %}
       {% else %}
@@ -26,6 +26,6 @@
 
 {% assign keys = keys %}
 {% assign field = 'categories' %}
-{% assign url = '/art.html' | relative_url %}
-{% assign posts = art_posts %}
+{% assign url = '/daily.html' | relative_url %}
+{% assign posts = daily_posts %}
 {%- include sidebar/common-list.html show_all = '0' -%}

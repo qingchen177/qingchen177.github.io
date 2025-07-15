@@ -1,24 +1,24 @@
 ---
 layout: framework
-sidebar: art-list
+sidebar: daily-list
 ---
 
-{% assign art_categories = site.data.art-categories.categories %}
+{% assign daily_categories = site.data.daily-categories.categories %}
 
-{% assign art_posts = "" | split: "" %}
+{% assign daily_posts = "" | split: "" %}
 {% for post in site.posts %}
   {% for cat in post.categories %}
-    {% if art_categories contains cat %}
-      {% assign art_posts = art_posts | push: post %}
+    {% if daily_categories contains cat %}
+      {% assign daily_posts = daily_posts | push: post %}
       {% break %}
     {% endif %}
   {% endfor %}
 {% endfor %}
 
 {% assign keys = "" | split: "" %}
-{% for post in art_posts %}
+{% for post in daily_posts %}
   {% for cat in post.categories %}
-    {% if art_categories contains cat %}
+    {% if daily_categories contains cat %}
       {% if keys contains cat %}
         {% continue %}
       {% else %}
@@ -30,5 +30,5 @@ sidebar: art-list
 
 {%- assign keys = keys -%}
 {%- assign field = 'categories' -%}
-{%- assign posts = art_posts -%}
+{%- assign posts = daily_posts -%}
 {%- include views/segments.html keys=keys field=field posts=posts-%}

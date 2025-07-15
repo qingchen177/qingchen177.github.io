@@ -1,0 +1,27 @@
+{% assign love-letter_categories = site.data.love-letter-categories.categories %}
+
+{% assign love-letter_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% for cat in post.categories %}
+    {% if love-letter_categories contains cat %}
+      {% assign love-letter_posts = love-letter_posts | push: post %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{%- if love-letter_posts.size > 0 -%}
+  {% include functions.html func='log' level='debug' msg='Get datetimes value' %}
+
+  {% assign filter = '%Y' %}
+  {% assign posts = love-letter_posts %}
+  {% include functions.html func='get_datetimes' posts=posts %}
+  {% assign datetimes = return %}
+
+  {% assign keys = datetimes %}
+  {% assign field = 'date' %}
+  {% assign url = '/love-letter.html' | relative_url %}
+  {%- include sidebar/common-list.html show_all = '0' -%}
+{%- endif -%}
+
+
