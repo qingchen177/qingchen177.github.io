@@ -99,7 +99,7 @@ excerpt:
   text_size: 300         # 摘录默认字数
 
 # Pagination setting
-paginate: 5
+paginate: 6
 
 # Photo previewer settings (PhotoSwipe 5)
 # the options please refer to: https://photoswipe.com/options/
