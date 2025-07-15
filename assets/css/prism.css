@@ -79,7 +79,7 @@ pre[class*=language-] {
 }
 
 .token.boolean, .token.constant, .token.deleted, .token.number, .token.property, .token.symbol, .token.tag {
-  color: #905
+  color: #d70378
 }
 
 .token.attr-name, .token.builtin, .token.char, .token.inserted, .token.selector, .token.string {
@@ -87,8 +87,9 @@ pre[class*=language-] {
 }
 
 .language-css .token.string, .style .token.string, .token.entity, .token.operator, .token.url {
-  color: #9a6e3a;
-  background: hsla(0, 0%, 100%, .5)
+  color: #be8c50;
+  /*background: hsla(0, 0%, 100%, .2);*/
+  /*border-radius: 1px;*/
 }
 
 .token.atrule, .token.attr-value, .token.keyword {
