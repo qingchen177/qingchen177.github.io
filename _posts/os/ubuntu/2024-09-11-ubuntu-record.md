@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Ubuntu & AI入坑
-categories: [操作系统]
-tags: [Ubuntu]
+title: Ubuntu记录
+categories: [ 操作系统 ]
+tags: [ Ubuntu,美化,环境安装 ]
 #author: 清尘
 #banner: "/assets/images/banners/3.jpg"
 ---
