@@ -5,6 +5,19 @@
   @include relative-font-size(1.0);
   min-width: 200px;
 
+  // 关键新增部分 👇
+  max-height: 90vh; // 或自定义高度，比如 80vh / 500px
+  overflow-y: auto;
+
+  // 隐藏滚动条：兼容 Webkit
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  -ms-overflow-style: none;  // IE/Edge 隐藏滚动条
+  scrollbar-width: none;     // Firefox 隐藏滚动条
+
   ul {
     list-style: none;
     margin: 0;
@@ -12,10 +25,6 @@
 
   li {
     border-bottom: solid 1px #00000018;
-
-    //&:last-child {
-    //  border-bottom: none;
-    //}
 
     a {
       display: flex;
