@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 知识图谱
-tags: ["KnowledgeGraph","AI"]
+tags: ["KnowledgeGraph"]
 categories: ["人工智能"]
 excerpt_image: "/assets/images/post/90F217C58F02464082B5D72C3F7EB872.png"
 ---
