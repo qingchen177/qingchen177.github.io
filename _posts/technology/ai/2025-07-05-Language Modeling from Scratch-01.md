@@ -184,7 +184,7 @@ params = train_bpe(string, num_merges=3)
 
 ![image-20250716165056307](/assets/images/post/image-20250716165056307.png)
 
-这里最后去实操一下[url](https://stanford-cs336.github.io/spring2025-lectures/?trace=var%2Ftraces%2Flecture_01.json&animate=1&step=621)
+这里最好去实操一下[url](https://stanford-cs336.github.io/spring2025-lectures/?trace=var%2Ftraces%2Flecture_01.json&animate=1&step=621)
 
 比如原来词表大小5个
 
