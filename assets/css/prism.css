@@ -63,7 +63,7 @@ pre[class*=language-] {
 }
 
 .token.comment {
-  color: #1c8800
+  color: #24c700
 }
 
 .token.cdata, .token.doctype, .token.prolog {
