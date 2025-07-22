@@ -216,5 +216,9 @@ html[data-theme="dark"] {
     border-color: #555;
     box-shadow: inset 0 -1px 0 #555;
   }
+
+  code[class*=language-], pre[class*=language-] {
+    background: rgb(40, 42, 50) !important;
+  }
 }
 

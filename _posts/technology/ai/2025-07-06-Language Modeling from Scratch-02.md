@@ -1,14 +1,14 @@
 ---
-title: "Language Modeling from Scratch Record 02"
+title: "Stanford CS336 | Language Modeling from Scratch | 02"
 layout: post
 date: 2025-07-06
 tag: ["LLM", "Stanford" ,"cs336"]
 categories: ["人工智能"]
 ---
 
+## 前言
 
-
-[Language Modeling from Scratch](https://online.stanford.edu/courses/cs336-language-modeling-scratch)
+课程链接：[Language Modeling from Scratch](https://online.stanford.edu/courses/cs336-language-modeling-scratch)
 
 第二课是 Pytorch，Resource Accounting
 

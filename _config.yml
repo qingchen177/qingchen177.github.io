@@ -22,7 +22,7 @@ yat-plus:
   date_format: "%Y-%m-%d"
 #debug: true
 header_transparent: true
-content_width: "980px"
+content_width: "1100px"
 # 百度站点分析
 baidu_analytics: "36ab4b9ea8da9e007af3150aa46657cd"
 sitemap: true
