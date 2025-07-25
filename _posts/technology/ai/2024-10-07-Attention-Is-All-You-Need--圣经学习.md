@@ -46,9 +46,7 @@ $N=6$
 
 每个子层的输出是$LayerNorm(x+Sublayer(x))$，$Sublayer(x)$是子层本身实现的函数。
 
-为了便于残差连接，模型所有子层和嵌入层（`embedding layer`）都产出维度为
-
-$d_{model}=512$的输出。
+为了便于残差连接，模型所有子层和嵌入层（`embedding layer`）都产出$d_{model}=512$维度的输出。
 
 ## 解码器（Decoder）
 
@@ -1234,3 +1232,49 @@ print("Loss:", loss.item())
 就是把本来正确的`one-hot`编码，从`[0, 1, 0, 0, ..., 0]`变成 `[0.00101, 0.901, 0.00101, ..., 0.00101]`
 
 然后去计算loss
+
+## 附
+
+### 层归一化（LayerNorm）
+
+举个例子：
+班上有 5 个同学的身高：
+`[140, 150, 160, 170, 180]` cm
+老师先算出平均身高 `160`，然后减去平均、除以“波动大小”（标准差），得到一排接近 0 的数`[-1.6, ‑0.8, 0, 0.8, 1.6]`
+最后再乘一个“放大倍数” γ（gamma）和加一个“平移” β（beta），让网络自己决定到底要多大。
+
+```python
+import torch
+
+class MyLayerNorm(torch.nn.Module):
+    def __init__(self, dim):
+        super().__init__()
+        # 两个可训练的参数：缩放 gamma、平移 beta
+        self.gamma = torch.nn.Parameter(torch.ones(dim))
+        self.beta  = torch.nn.Parameter(torch.zeros(dim))
+
+    def forward(self, x):
+        # x 形状：(batch, seq_len, dim)
+        mean = x.mean(dim=-1, keepdim=True)        # 1) 求平均
+        var  = x.var (dim=-1, keepdim=True)        # 2) 求方差
+        x_hat = (x - mean) / torch.sqrt(var + 1e-5)  # 3) 标准化
+        return self.gamma * x_hat + self.beta      # 4) 缩放+平移
+```
+
+### Dropout
+
+学习时随机“丢”掉一些数字，防止死记硬背。
+
+```python
+class MyDropout(torch.nn.Module):
+    def __init__(self, p=0.1):
+        super().__init__()
+        self.p = p          # 丢弃概率
+
+    def forward(self, x):
+        if not self.training:        # 如果是推理模式，直接返回原值
+            return x
+        mask = (torch.rand_like(x) > self.p).float()  # 随机 0/1 掩码
+        return x * mask / (1 - self.p)                # 放大保留的值
+```
+
