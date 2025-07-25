@@ -1278,3 +1278,30 @@ class MyDropout(torch.nn.Module):
         return x * mask / (1 - self.p)                # 放大保留的值
 ```
 
+### 残差连接
+
+AI回答如下：
+
+> 写作文：
+>
+> 1. 先写了一段草稿（这就是**输入 x**）。
+> 2. 老师帮你修改了一遍，得到“修改版”（这就是**处理后的结果 F(x)**）。
+> 3. 但老师怕你改得面目全非，于是让你把**原草稿 x**再叠在最下面，一起交上去。
+>
+> 最终作文 = 原草稿 + 老师修改
+> 这就叫“残差连接”。
+
+```python
+import torch
+import torch.nn as nn
+
+class SimpleBlock(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer = nn.Linear(64, 64)   # 随便一个处理层
+
+    def forward(self, x):
+        out = self.layer(x)   # 处理
+        return x + out        # 残差连接：把 x 直接加回来
+```
+
