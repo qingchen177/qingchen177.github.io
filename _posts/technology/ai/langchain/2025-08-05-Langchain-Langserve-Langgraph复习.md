@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Langchain-Langserve-Langgraph复习.md
+title: Langchain-Langserve-Langgraph复习
 tags: ["Langchain","Langserve","Langgraph"]
 categories: ["人工智能"]
 ---
