@@ -172,3 +172,8 @@ plugins:
   - jekyll-spaceship
   - jekyll-target-blank
 future: true
+sass:
+  quiet_deps: true          # 只静默来自依赖（node_modules、theme）的警告
+  silence_deprecations:
+    - import                # 完全屏蔽针对 @import 的弃用警告
+    - global-builtin
