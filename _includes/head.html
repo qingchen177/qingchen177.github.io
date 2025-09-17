@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
   <meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
   {%- seo -%}
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
   <script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+  <script src="//unpkg.com/heti/umd/heti-addon.min.js"></script>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.baidu_analytics -%}
   {%- include extensions/baidu-analytics.html -%}
@@ -21,6 +22,11 @@
   {%- include extensions/photo-swipe.html -%}
   {%- include custom-head.html -%}
 </head>
+
+<script>
+  const heti = new Heti('.heti');
+  heti.autoSpacing(); // 自动进行中西文混排美化和标点挤压
+</script>
 
 <script>
   function isMobile() {
