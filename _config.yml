@@ -7,7 +7,7 @@
 # banner_html: <html> # 文章配图html，非必填
 # comments: false # 评论功能，非必填，默认开启
 # tags: [标签1, 标签2] # 文章标签，非必填，建议填写，标签页面会自动生成，默认分隔符为：<|>（标签中不能出现此类字符）
-
+encoding: utf-8
 # 系统配置
 title: 清尘
 email: qingchen0607@qq.com
