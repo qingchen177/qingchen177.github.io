@@ -15,7 +15,7 @@ conda activate pytorch
 pip3 install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cpu
 ```
 
-![image-20250924190613167](./assets/image-20250924190613167.png)
+![image-20250924190613167](../../../../assets/images/post/image-20250924190613167.png)
 
 ### 测试
 
