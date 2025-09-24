@@ -14,7 +14,7 @@ email: qingchen0607@qq.com
 author: 清尘
 copyright: "Copyright (c) {currentYear} <a href=\"https://blog.liqingchen.com\">{author}</a>"
 description: >-
-    清尘的小世界，在此你可以了解一部分的清尘。
+  清尘的小世界，在此你可以了解一部分的清尘。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.liqingchen.com" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "/assets/images/favicon.ico" # the favicon for your site
@@ -30,7 +30,7 @@ lang: zh-CN
 #theme_color: snowwhite
 brand_color: orangered
 selection:
-#  color: "#5900ff"
+  #  color: "#5900ff"
   color: "#2710c2"
   background_color: "#aec4ad"
 
@@ -92,7 +92,7 @@ header_pages:
 
 # 文章摘要缩略图设置
 excerpt:
-#  default_image: /assets/images/default-image.jpeg  # Default image when the image style is not none
+  #  default_image: /assets/images/default-image.jpeg  # Default image when the image style is not none
   image_style: z       # Image layout style (It's value could be none, left, right, top, z, z-reverse)
   image_width: 36.2%      # Image default width
   image_height: 160px     # Image default height
@@ -156,8 +156,8 @@ kramdown:
   input: GFM
 
 feed:
-#  categories:
-#    - 情书
+  #  categories:
+  #    - 情书
   tags: true
   icon: /assets/images/favicon.ico
   logo: /assets/images/favicon.png
@@ -177,3 +177,66 @@ sass:
   silence_deprecations:
     - import                # 完全屏蔽针对 @import 的弃用警告
     - global-builtin
+
+
+# Where things are
+#jekyll-spaceship:
+#  # default enabled processors
+#  processors:
+#    - table-processor
+#    - mathjax-processor
+#    - plantuml-processor
+#    - mermaid-processor
+#    - polyfill-processor
+#    - media-processor
+#    - emoji-processor
+#    - element-processor
+#  mathjax-processor:
+#    src:
+#      - https://polyfill.io/v3/polyfill.min.js?features=es6
+#      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#    config:
+#      tex:
+#        inlineMath:
+#          - [ '$','$' ]
+#          - [ '\(','\)' ]
+#        displayMath:
+#          - [ '$$','$$' ]
+#          - [ '\[','\]' ]
+#      svg:
+#        fontCache: 'global'
+#    optimize: # optimization on building stage to check and add mathjax scripts
+#      enabled: true # value `false` for adding to all pages
+#      include: [ ]   # include patterns for math expressions checking (regexp)
+#      exclude: [ ]   # exclude patterns for math expressions checking (regexp)
+#  plantuml-processor:
+#    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+#    css:
+#      class: plantuml
+#    syntax:
+#      code: 'plantuml!'
+#      custom: [ '@startuml', '@enduml' ]
+#    src: http://www.plantuml.com/plantuml/svg/
+#  mermaid-processor:
+#    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+#    css:
+#      class: mermaid
+#    syntax:
+#      code: 'mermaid!'
+#      custom: [ '@startmermaid', '@endmermaid' ]
+#    config:
+#      theme: default
+#    src: https://mermaid.ink/svg/
+#  media-processor:
+#    default:
+#      id: 'media-{id}'
+#      class: 'media'
+#      width: '100%'
+#      height: 350
+#      frameborder: 0
+#      style: 'max-width: 600px; outline: none;'
+#      allow: 'encrypted-media; picture-in-picture'
+#  emoji-processor:
+#    css:
+#      class: emoji
+#    src: https://github.githubassets.com/images/icons/emoji/
