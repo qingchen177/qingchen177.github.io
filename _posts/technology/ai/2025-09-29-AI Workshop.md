@@ -16,7 +16,7 @@ categories: ["人工智能"]
 
 ## AI（Artificial Intelligence）
 
-![人工智能范围](../../../assets/images/post/Scope%20of%20Artificial%20Intelligence.png)
+![人工智能范围](/assets/images/post/Scope%20of%20Artificial%20Intelligence.png)
 
 人工智能：用机器来模仿人类学习以及其他方面的智能。
 
@@ -33,7 +33,7 @@ categories: ["人工智能"]
 
 
 
-![img](../../../assets/images/post/Machine%20Learning%20Application%20Scenarios.png)
+![img](/assets/images/post/Machine%20Learning%20Application%20Scenarios.png)
 
 - 预测推荐：销量预测、量化投资、广告推荐、相似推荐等；
 - 图像识别：OCR、人脸识别、物品边界检测等；
@@ -50,7 +50,7 @@ categories: ["人工智能"]
 3. *目标函数*（objective function）:现在更多叫损失函数（loss function），用来量化模型的有效性（预测值和真实值的差异大小）；
 4. 调整模型参数以优化目标函数的*算法*（algorithm）。【为了让目标函数的值最小】
 
-![机器学习定义](../../../assets/images/post/Definition%20of%20Machine%20Learning.png)
+![机器学习定义](/assets/images/post/Definition%20of%20Machine%20Learning.png)
 
 #### 分类
 
@@ -60,7 +60,7 @@ categories: ["人工智能"]
 
 🌰：1w张图片要么是周杰伦，要么系陶喆。
 
-![image-20250922224455486](../../../assets/images/post/image-20250922224455486.png)
+![image-20250922224455486](/assets/images/post/image-20250922224455486.png)
 
 - 特征值：周杰伦/陶喆的图片
 - 目标值：周杰伦/陶喆 - 不同的人（类型）
@@ -84,7 +84,7 @@ categories: ["人工智能"]
 
 ##### 二者区别
 
-![监督学习无监督学习区别](../../../assets/images/post/Differences%20Between%20Supervised%20Learning%20and%20Unsupervised%20Learning.png)
+![监督学习无监督学习区别](/assets/images/post/Differences%20Between%20Supervised%20Learning%20and%20Unsupervised%20Learning.png)
 
 ###### 存在的问题
 
@@ -93,9 +93,9 @@ categories: ["人工智能"]
 
 #### 流程
 
-![开发流程](../../../assets/images/post/Development%20Process.png)
+![开发流程](/assets/images/post/Development%20Process.png)
 
-![img](../../../assets/images/post/Machine%20Learning%20Development%20Process.png)
+![img](/assets/images/post/Machine%20Learning%20Development%20Process.png)
 
 ##### 训练步骤
 
@@ -104,7 +104,7 @@ categories: ["人工智能"]
 3. 调整参数，使模型在这些样本中表现得更好；（调参侠登场）
 4. 重复第（2）步和第（3）步，直到模型在任务中的表现令人满意。
 
-![ml-loop.svg](../../../assets/images/post/ml-loop.svg)
+![ml-loop.svg](/assets/images/post/ml-loop.svg)
 
 
 
@@ -131,11 +131,11 @@ categories: ["人工智能"]
 
 > 深度学习算法试图从数据中学习高级功能，这是深度学习的一个非常独特的部分。减少了为每个问题开发新特征提取器的任务。适合用在难提取特征的图像、语音、自然语言处理领域。
 
-![image-20250925140443347](../../../assets/images/post/image-20250925140443347.png)
+![image-20250925140443347](/assets/images/post/image-20250925140443347.png)
 
 深度学习的参数很大，需要大量数据去多次优化训练参数，数据越多表现越好。
 
-![image-20250925140931409](../../../assets/images/post/image-20250925140931409.png)
+![image-20250925140931409](/assets/images/post/image-20250925140931409.png)
 
 > 1. 大量的训练数据集
 > 2. 大量的训练算力
@@ -192,15 +192,15 @@ categories: ["人工智能"]
 
 ###### 非自主性
 
-![../_images/eye-coffee.svg](../../../assets/images/post/eye-coffee.svg)
+![../_images/eye-coffee.svg](/assets/images/post/eye-coffee.svg)
 
 ###### 自主性
 
-![../_images/eye-book.svg](../../../assets/images/post/eye-book.svg)
+![../_images/eye-book.svg](/assets/images/post/eye-book.svg)
 
 - 注意力提示/汇聚
 
-  ![../_images/qkv.svg](../../../assets/images/post/qkv.svg)
+  ![../_images/qkv.svg](/assets/images/post/qkv.svg)
 
 - 多头注意力
 
@@ -208,7 +208,7 @@ categories: ["人工智能"]
 
   - [Transformer](https://blog.liqingchen.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/2024/10/07/Attention-Is-All-You-Need-%E5%9C%A3%E7%BB%8F%E5%AD%A6%E4%B9%A0)
 
-    ![../_images/transformer.svg](../../../assets/images/post/transformer.svg)
+    ![../_images/transformer.svg](/assets/images/post/transformer.svg)
 
 #### Diving
 
@@ -216,7 +216,7 @@ categories: ["人工智能"]
 
 ### 推荐算法
 
-![../_images/recommendation_pipeline.svg](../../../assets/images/post/recommendation_pipeline.svg)
+![../_images/recommendation_pipeline.svg](/assets/images/post/recommendation_pipeline.svg)
 
 #### 分类
 
@@ -275,11 +275,11 @@ LLM 的训练一般采用 **语言建模任务**：
 
 在 LLM 中，多数使用 **自回归建模**（例如 GPT 系列）。
 
-![context_window_methods](../../../assets/images/post/lm_and_dae.jpg)
+![context_window_methods](/assets/images/post/lm_and_dae.jpg)
 
 ### 架构
 
-![img](../../../assets/images/post/v2-145d4cc1a3b54c838cc8a053b2e2a2e6_1440w.jpg)
+![img](/assets/images/post/v2-145d4cc1a3b54c838cc8a053b2e2a2e6_1440w.jpg)
 
 基于**Transformer** (Decode only)架构，具体包括：
 
@@ -442,19 +442,19 @@ output_embeddings = embedding_layer(batch_tokens) # tensor shape [1, 4, 1024]
 
 ### 训练方式
 
-![在这里插入图片描述](../../../assets/images/post/3462f5854e014bf9a962563d590f5d46.png)
+![在这里插入图片描述](/assets/images/post/3462f5854e014bf9a962563d590f5d46.png)
 
-![img](../../../assets/images/post/llama_family.jpg)
+![img](/assets/images/post/llama_family.jpg)
 
 #### 预训练 - PT
 
-![data_dist_of_llms](../../../assets/images/post/data_dist_of_llms.jpg)
+![data_dist_of_llms](/assets/images/post/data_dist_of_llms.jpg)
 
 - 大量文本数据喂给模型，学习知识
 - 无监督学习
 - 模型可以接着一句话继续输出内容（文本补全）
 
-![data_preprocess](../../../assets/images/post/preprocess.jpg)
+![data_preprocess](/assets/images/post/preprocess.jpg)
 
 #### 微调 - SFT
 
@@ -502,9 +502,9 @@ output_embeddings = embedding_layer(batch_tokens) # tensor shape [1, 4, 1024]
 
 ### 训练技术
 
-![bff136fb-8c81-4294-b823-489fdbcdaa8a](../../../assets/images/post/bff136fb-8c81-4294-b823-489fdbcdaa8a.png)
+![bff136fb-8c81-4294-b823-489fdbcdaa8a](/assets/images/post/bff136fb-8c81-4294-b823-489fdbcdaa8a.png)
 
-![lr_decay_strategy](../../../assets/images/post/parallel_training.jpg)
+![lr_decay_strategy](/assets/images/post/parallel_training.jpg)
 
 - 3D 并行训练
   1. 数据并行（Data Parallelism）
@@ -544,7 +544,7 @@ output_embeddings = embedding_layer(batch_tokens) # tensor shape [1, 4, 1024]
 
 https://platform.openai.com/docs/guides/function-calling?lang=python&strict-mode=enabled#page-top
 
-![Function Calling Diagram Steps](../../../assets/images/post/function-calling-diagram-steps.png)
+![Function Calling Diagram Steps](/assets/images/post/function-calling-diagram-steps.png)
 
 | Field         | Description                                                  |
 | :------------ | :----------------------------------------------------------- |
@@ -709,7 +709,7 @@ curl --request POST \
 
 ##### CoT
 
-![COT](../../../assets/images/post/1933d9fe.png)
+![COT](/assets/images/post/1933d9fe.png)
 
 - Few-shot
 
@@ -738,7 +738,7 @@ curl --request POST \
 
 ##### ReAct
 
-![REACT](../../../assets/images/post/8e7c93ae.png)
+![REACT](/assets/images/post/8e7c93ae.png)
 
 #### 网址
 
@@ -749,7 +749,7 @@ curl --request POST \
 
 构建动态系统，适当的位置提高正确的信息和工具
 
-![The rise of "context engineering"](../../../assets/images/post/GtRmoOqaUAEXH2i.jpeg)
+![The rise of "context engineering"](/assets/images/post/GtRmoOqaUAEXH2i.jpeg)
 
 - 动态
 - 正确信息
@@ -765,7 +765,7 @@ curl --request POST \
 
 `检索增强生成（Retrieval-Augmented Generation）`
 
-!["RAG框架"](../../../assets/images/post/81dc2cdc.png)
+!["RAG框架"](/assets/images/post/81dc2cdc.png)
 
 前半段基本就是推荐系统的召回+粗排+精排的逻辑
 
@@ -782,11 +782,11 @@ curl --request POST \
 > - 精准事实传入
 > - 相关性、准确型提高
 
-!["RAG框架"](../../../assets/images/post/c8703891.png)
+!["RAG框架"](/assets/images/post/c8703891.png)
 
 #### 优化
 
-!["RAG 分类学"](../../../assets/images/post/e3b19705.png)
+!["RAG 分类学"](/assets/images/post/e3b19705.png)
 
 ##### 文档读取
 
@@ -833,7 +833,7 @@ flowchart LR
 
 #### 变种
 
-!["RAG Framework"](../../../assets/images/post/21be1d6f.png)
+!["RAG Framework"](/assets/images/post/21be1d6f.png)
 
 ##### KAG/GraphRAG
 
@@ -858,7 +858,7 @@ flowchart LR
 - **Client**：模型运行时（如 GPT-4.1、Claude 3.5 等）会作为客户端访问 MCP server。
 - **Capabilities**：你要声明自己支持哪些能力，比如工具调用、文件读取、资源列表。
 
-![img](../../../assets/images/post/usb-c-example-mcp-servers-from-norah-sakal-blog.png)
+![img](/assets/images/post/usb-c-example-mcp-servers-from-norah-sakal-blog.png)
 
 #### 流程
 
@@ -983,7 +983,7 @@ if __name__ == "__main__":
 - https://github.com/a2aproject/A2A
 - https://a2a-protocol.org/latest/topics/what-is-a2a/
 
-![an illustrated flow chart showing the flow of data between the remote agent and the client agent to produce secure collaboration, task and state management, user experience negotiation, and capability discovery](../../../assets/images/post/image5_VkAG0Kd.original.png)
+![an illustrated flow chart showing the flow of data between the remote agent and the client agent to produce secure collaboration, task and state management, user experience negotiation, and capability discovery](/assets/images/post/image5_VkAG0Kd.original.png)
 
 和multi-agent对比
 
@@ -1003,12 +1003,12 @@ graph LR
 
 - 代理之间无法协同工作
 
-![A2A Actors showing a User, A2A Client (Client Agent), and A2A Server (Remote Agent)](../../../assets/images/post/a2a-actors.png)
+![A2A Actors showing a User, A2A Client (Client Agent), and A2A Server (Remote Agent)](/assets/images/post/a2a-actors.png)
 
 - **A2A：** 标准化部署在不同组织并使用不同框架开发的代理之间的通信。
 - **MCP：** 将模型连接到数据和外部资源。
 
-![ADK + MCP](../../../assets/images/post/a2a-mcp-readme.png)
+![ADK + MCP](/assets/images/post/a2a-mcp-readme.png)
 
 #### Core
 
@@ -1075,7 +1075,7 @@ public_agent_card = AgentCard(
 
 **AI Infra涵盖一切跟开发部署相关的工具和流程**
 
-![img](../../../assets/images/post/v2-b3ec96aadc78ac44df47d5065014077c_1440w.jpg)
+![img](/assets/images/post/v2-b3ec96aadc78ac44df47d5065014077c_1440w.jpg)
 
 - IaaS(**Infrastructure as a Service**)
 - PaaS(**Platform as a Service**)
@@ -1084,7 +1084,7 @@ public_agent_card = AgentCard(
 
 ### GPU
 
-![img](../../../assets/images/post/v2-ba9bb54db502d8a4ddbe350a15c150df_1440w.jpg)
+![img](/assets/images/post/v2-ba9bb54db502d8a4ddbe350a15c150df_1440w.jpg)
 
 #### MFU
 
@@ -1100,7 +1100,7 @@ public_agent_card = AgentCard(
 
 ------
 
-![img](../../../assets/images/post/2010730-20240708201916576-342090450.png)
+![img](/assets/images/post/2010730-20240708201916576-342090450.png)
 
 [实例](https://blog.liqingchen.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/2025/07/06/Language-Modeling-from-Scratch-02#h-mfu)
 
