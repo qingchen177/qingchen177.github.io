@@ -389,7 +389,7 @@ output_embeddings = embedding_layer(batch_tokens) # tensor shape [1, 4, 1024]
 
 ##### 圣经
 
-[Attention Is All You Need |圣经学习](https://blog.liqingchen.com/人工智能/2024/10/07/Attention-Is-All-You-Need-圣经学习.html)
+[Attention Is All You Need 圣经学习](https://blog.liqingchen.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/2024/10/07/Attention-Is-All-You-Need-%E5%9C%A3%E7%BB%8F%E5%AD%A6%E4%B9%A0)
 
 #### 输出采样（Output）
 

@@ -199,7 +199,7 @@ jekyll-spaceship:
       tex:
         inlineMath:
           - [ '$','$' ]
-#          - [ '\(','\)' ]
+          - [ '\(','\)' ]
         displayMath:
           - [ '$$','$$' ]
 #          - [ '\[','\]' ]
@@ -217,16 +217,17 @@ jekyll-spaceship:
 #      code: 'plantuml!'
 #      custom: [ '@startuml', '@enduml' ]
 #    src: http://www.plantuml.com/plantuml/svg/
-#  mermaid-processor:
-#    mode: default  # mode value 'pre-fetch' for fetching image at building stage
-#    css:
-#      class: mermaid
-#    syntax:
-#      code: 'mermaid!'
-#      custom: [ '@startmermaid', '@endmermaid' ]
-#    config:
-#      theme: default
+  mermaid-processor:
+    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    css:
+      class: mermaid
+    syntax:
+      code: 'mermaid'
+      custom: [ '@startmermaid', '@endmermaid' ]
+    config:
+      theme: default
 #    src: https://mermaid.ink/svg/
+    src: https://mermaid.ink/img/
 #  media-processor:
 #    default:
 #      id: 'media-{id}'
