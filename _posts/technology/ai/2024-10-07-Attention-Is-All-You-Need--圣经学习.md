@@ -488,7 +488,7 @@ V矩阵：
 
 单头和多头的矩阵结构变化对比：
 
-```mermaid!
+```mermaid
 graph LR
 subgraph 单头
 direction LR
