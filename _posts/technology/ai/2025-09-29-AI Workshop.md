@@ -212,7 +212,7 @@ categories: ["人工智能"]
 
 #### Diving
 
-[神经网络、感知机、卷积神经网络]()
+[神经网络、感知机、卷积神经网络](https://blog.liqingchen.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/2025/09/26/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0)
 
 ### 推荐算法
 
