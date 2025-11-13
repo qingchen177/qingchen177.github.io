@@ -8,3 +8,5 @@ vendor
 .idea
 Gemfile.lock
 temp.md
+.DS_Store
+.vscode
