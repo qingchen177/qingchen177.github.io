@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ipynb 转 markdown
-tags: ["ipynb","markdown"]
+title: ipynb 转 Markdown
+tags: ["ipynb","Markdown"]
 categories: ["Wiki"]
 ---
 

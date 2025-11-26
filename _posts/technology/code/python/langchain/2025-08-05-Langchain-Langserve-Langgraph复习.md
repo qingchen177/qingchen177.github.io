@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Langchain-Langserve-Langgraph复习
-tags: ["Langchain","Langserve","Langgraph"]
-categories: ["人工智能"]
+tags: ["LangChain","LangServe","LangGraph"]
+categories: ["Python"]
 ---
 
 ## Langchain

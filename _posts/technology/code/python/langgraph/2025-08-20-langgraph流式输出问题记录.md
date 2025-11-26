@@ -1,8 +1,8 @@
 ---
 layout: post
-title: langgraph流式输出问题记录
-tags: [langgraph]
-categories: ["人工智能"]
+title: LangGraph流式输出问题记录
+tags: [LangGraph]
+categories: ["Python"]
 ---
 
 ## 前情

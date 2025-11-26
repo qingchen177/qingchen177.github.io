@@ -2,7 +2,7 @@
 layout: post
 title: Ubuntu记录
 categories: [ 操作系统 ]
-tags: [ Ubuntu,美化,环境安装 ]
+tags: [ Ubuntu,美化 ]
 #author: 清尘
 #banner: "/assets/images/banners/3.jpg"
 ---

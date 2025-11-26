@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 通过nexus构建一个docker私有仓库记录
+title: 通过Nexus构建一个Docker私有仓库记录
 tags: [Docker,Nexus]
-categories: [Docker]
+categories: [运维]
 ---
 
 参考：https://blog.csdn.net/gengkui9897/article/details/127353727

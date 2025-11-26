@@ -2,7 +2,7 @@
 title: "Stanford CS336 | Language Modeling from Scratch | 03"
 subtitle: "EVERYTHING YOU DIDN'T WANT TO KNOW ABOUT LM ARCHITECTURE AND TRAINING"
 layout: post
-tag: ["LLM", "Stanford" ,"cs336"]
+tag: ["LLM", "Stanford" ,"CS336"]
 categories: ["人工智能"]
 ---
 

@@ -1,8 +1,7 @@
 ---
 layout: post
 title: AI Workshop
-tags: ["AI"]
-categories: ["人工智能"]
+tags: ["Artificial Intelligence", "Machine Learning", "Deep Learning"]
 ---
 
 ## 引言

@@ -2,7 +2,7 @@
 layout: post
 title: Mac M4芯片安装PyTorch
 categories: [操作系统]
-
+tags: [PyTorch, Mac]
 ---
 
 ### 命令

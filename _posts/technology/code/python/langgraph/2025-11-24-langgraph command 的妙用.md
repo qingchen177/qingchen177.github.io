@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Langgraph Command 的妙用
-tags: [langgraph]
-categories: ["人工智能"]
+tags: [LangGraph]
+categories: ["Python"]
 ---
 
 ## 场景

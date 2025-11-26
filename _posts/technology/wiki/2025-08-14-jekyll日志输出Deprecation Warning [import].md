@@ -1,7 +1,7 @@
 ---
 layout: post
 title: jekyll日志输出Deprecation Warning...解决方案
-tags: [jekyll,sass]
+tags: [Jekyll,Sass]
 categories: [Wiki]
 ---
 

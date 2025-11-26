@@ -1,7 +1,7 @@
 ---
 title: "Attention Is All You Need | 圣经学习"
 layout: post
-tag: ["LLM", "Transformer" ,"Google"]
+tag: ["Attention", "Transformer" ,"Google"]
 categories: ["人工智能"]
 ---
 

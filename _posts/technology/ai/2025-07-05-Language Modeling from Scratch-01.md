@@ -2,7 +2,7 @@
 title: "Stanford CS336 | Language Modeling from Scratch | 01"
 layout: post
 date: 2025-07-05
-tag: ["LLM", "Stanford" ,"cs336"]
+tag: ["LLM", "Stanford" ,"CS336"]
 categories: ["人工智能"]
 ---
 

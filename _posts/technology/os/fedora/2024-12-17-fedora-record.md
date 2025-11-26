@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fedora记录
-tags: [Fedora,向日葵,PyCharm中文乱码]
+tags: [Fedora,向日葵,PyCharm]
 categories: [操作系统]
 ---
 ## Fedora

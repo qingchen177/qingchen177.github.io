@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Python环境管理工具
-categories: ["code"]
-tags: ["python"]
+categories: ["Python"]
+tags: ["venv", "poetry", "hatch", "pyenv", "pipenv", "conda", "virtualenv", "uv"]
 ---
 
 ## 前情

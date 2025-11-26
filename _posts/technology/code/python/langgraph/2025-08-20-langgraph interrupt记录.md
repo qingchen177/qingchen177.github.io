@@ -1,8 +1,8 @@
 ---
 layout: post
-title: langgraph interrupt记录
-tags: [langgraph]
-categories: ["人工智能"]
+title: LangGraph interrupt 记录
+tags: [LangGraph]
+categories: ["Python"]
 ---
 
 ## [interrupt](https://langchain-ai.github.io/langgraph/reference/types/#langgraph.types.Interrupt)

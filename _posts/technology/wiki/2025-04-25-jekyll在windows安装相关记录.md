@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jekyll在windows下安装的记录
-tags: [Ruby,Jekyll,bundle,gem]
+tags: [Windows,Ruby,Jekyll]
 categories: [Wiki]
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: LangGraph persistence
-tags: [langgraph]
-categories: ["人工智能"]
+tags: [LangGraph]
+categories: ["Python"]
 ---
 
 ## LangGraph persistence
