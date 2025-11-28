@@ -767,7 +767,7 @@ sudo apt-get install git neofetch
 cd ~/.ssh/
 ll
 # 中间Enter按过去
-ssh-keygen -t rsa -C "qingchen0607@qq.com"
+ssh-keygen -t rsa -C "contact@liqingchen.com"
 # 复制贴到github ssh key里面
 cat id_rsa.pub
 ```
