@@ -31,8 +31,9 @@ lang: zh-CN
 brand_color: orangered
 selection:
   #  color: "#5900ff"
-  color: "#2710c2"
-  background_color: "#aec4ad"
+  color: "#000000"
+#  background_color: "#87CEFA"
+  background_color: "#FFD700"
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -61,7 +62,7 @@ header_pages:
   - index.html
   - technology.html
   - daily.html
-  - love-letter.html
+  - love-letter.md
   - tags.html
   - archives.html
   - about.md
@@ -99,7 +100,7 @@ excerpt:
   text_size: 300         # 摘录默认字数
 
 # Pagination setting
-paginate: 6
+paginate: 8
 
 # Photo previewer settings (PhotoSwipe 5)
 # the options please refer to: https://photoswipe.com/options/

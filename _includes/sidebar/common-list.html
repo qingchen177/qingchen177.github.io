@@ -21,12 +21,70 @@
   {%- endif -%}
 {%- endif -%}
 
+{%- if include.show_love != nil -%}
+  {%- assign show_love_str = include.show_love | downcase | strip -%}
+  {%- if show_love_str == 'true' or show_love_str == '1' -%}
+    {%- assign show_love = true -%}
+  {%- else -%}
+    {%- assign show_love = false -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign show_love = false -%}
+{%- endif -%}
+
+{%- if include.show_daily != nil -%}
+  {%- assign show_daily_str = include.show_daily | downcase | strip -%}
+  {%- if show_daily_str == 'true' or show_daily_str == '1' -%}
+    {%- assign show_daily = true -%}
+  {%- else -%}
+    {%- assign show_daily = false -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign show_daily = false -%}
+{%- endif -%}
+
+{%- if include.show_tech != nil -%}
+  {%- assign show_tech_str = include.show_tech | downcase | strip -%}
+  {%- if show_tech_str == 'true' or show_tech_str == '1' -%}
+    {%- assign show_tech = true -%}
+  {%- else -%}
+    {%- assign show_tech = false -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign show_tech = false -%}
+{%- endif -%}
+
+
 <div class="common-list">
   <ul>
     {% if show_all %}
       <li>
         <a href="{{ '/index.html' | relative_url }}">
           全部文章<span>{{ site.posts.size }}</span>
+        </a>
+      </li>
+    {% endif %}
+
+    {% if show_love %}
+      <li>
+        <a href="{{ '/love-letter.html' | relative_url }}">
+          情话盲盒<span>🤍</span>
+        </a>
+      </li>
+    {% endif %}
+
+    {% if show_daily %}
+      <li>
+        <a href="{{ '/daily.html' | relative_url }}">
+          日常分享<span>☀️</span>
+        </a>
+      </li>
+    {% endif %}
+
+    {% if show_tech %}
+      <li>
+        <a href="{{ '/technology.html' | relative_url }}">
+          技术分类<span>👨🏻‍💻️</span>
         </a>
       </li>
     {% endif %}

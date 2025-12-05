@@ -21,7 +21,7 @@
   {% assign keys = datetimes %}
   {% assign field = 'date' %}
   {% assign url = '/love-letter.html' | relative_url %}
-  {%- include sidebar/common-list.html show_all = '0' posts=love-letter_posts -%}
+  {%- include sidebar/common-list.html show_all = '0' show_love = '1' posts=love-letter_posts -%}
 {%- endif -%}
 
 
