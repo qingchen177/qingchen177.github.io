@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Langchain-Langserve-Langgraph复习
+title: LangChain-LangServe-LangGraph复习
 tags: ["LangChain","LangServe","LangGraph"]
 categories: ["Python"]
 ---
