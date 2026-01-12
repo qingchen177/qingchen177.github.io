@@ -107,8 +107,6 @@
   })();
 </script>
 
-<!--这个脚本实现了黑白模式主题切换的时候也切换了giscus的主题颜色，由于是AI生成的，存在一个bug-->
-<!--应该是document.addEventListener导致的，暗色模式切换页面会先切回白然后到黑，所以我把原作者的脚本又复制到上面了，然后bug就没了，好吧我真不会前端后续再做优化吧-->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const sw = document.getElementById('theme-switch');

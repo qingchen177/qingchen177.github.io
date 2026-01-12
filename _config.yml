@@ -14,7 +14,7 @@ email: contact@liqingchen.com
 author: 清尘
 copyright: "Copyright (c) {currentYear} <a href=\"https://blog.liqingchen.com\">{author}</a>"
 description: >-
-  李清尘的博客，主要发工作学习的内容给自己当做笔记，偶尔发发日常喜欢的音乐、电影和文字。
+  清尘的博客
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.liqingchen.com" # the base hostname & protocol for your site, e.g. https://example.com
 favicon: "/assets/images/favicon.ico" # the favicon for your site
@@ -102,7 +102,7 @@ excerpt:
   text_size: 300         # 摘录默认字数
 
 # Pagination setting
-paginate: 8
+paginate: 10
 
 # Photo previewer settings (PhotoSwipe 5)
 # the options please refer to: https://photoswipe.com/options/
